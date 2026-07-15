@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.cursor/
+.cursorignore
+.gemini/
+.geminiignore
+.agents/
+AGENTS.md
+CLAUDE.md
+mcp.json
+.mcp/
