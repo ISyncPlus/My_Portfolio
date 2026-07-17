@@ -36,7 +36,8 @@ const socials = [
 
 const Navbar = () => {
   return (
-    <header className="absolute inset-x-0 top-0 z-30 mx-auto flex w-full max-w-[100rem] items-center justify-between px-6 py-6 sm:px-10 lg:px-16 xl:px-20">
+    <header className="absolute inset-x-0 top-0 z-30">
+      <div className=" flex w-full items-center justify-between">
       <button
         type="button"
         className="flex cursor-pointer items-center gap-3 rounded-full bg-primary px-6 py-3 font-heading text-lg font-bold text-primary-foreground transition-transform active:scale-95"
@@ -60,6 +61,7 @@ const Navbar = () => {
         ))}
         <ThemeToggleButton className="ml-1 size-9" />
       </nav>
+      </div>
     </header>
   );
 };

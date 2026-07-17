@@ -49,8 +49,8 @@ const SkillRow = ({ reverse = false }: { reverse?: boolean }) => (
 
 const Expertise = () => {
   return (
-    <section id="expertise" className="relative bg-background px-6 py-24 sm:px-10 lg:py-32">
-      <div className="mx-auto flex max-w-6xl flex-col gap-14">
+    <section id="expertise" className="relative bg-background py-24 lg:py-32">
+      <div className="mx-auto flex w-full max-w-[100rem] flex-col gap-14 px-6 sm:px-10 lg:px-16 xl:px-20">
         <SectionHeading chip="Speciality" title="Areas of Expertise" />
 
         <div className="flex flex-col divide-y divide-foreground/10 border-y border-foreground/10">

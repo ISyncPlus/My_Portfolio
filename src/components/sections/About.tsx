@@ -11,8 +11,8 @@ const About = () => {
   const words = TEXT.split(" ");
 
   return (
-    <section id="about" className="relative bg-background px-6 py-28 sm:px-10 lg:py-36">
-      <div className="mx-auto flex max-w-5xl flex-col items-center gap-10">
+    <section id="about" className="relative bg-background py-28 lg:py-36">
+      <div className="mx-auto flex w-full max-w-[100rem] flex-col items-center gap-10 px-6 sm:px-10 lg:px-16 xl:px-20">
         <motion.span
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}

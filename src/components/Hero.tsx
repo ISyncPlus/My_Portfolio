@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
 
-import HeroGlitch from "@/components/HeroGlitch";
 import HexPortrait from "@/components/HexPortrait";
 import Navbar from "@/components/Navbar";
 
@@ -13,8 +12,7 @@ const HexBullet = () => (
 const Hero = () => {
   return (
     <section className="relative flex min-h-[calc(100vh-3rem)] flex-col overflow-hidden bg-background">
-      <HeroGlitch />
-
+      {/* LetterGlitch background temporarily removed while we verify padding — re-add <HeroGlitch /> here */}
       <Navbar />
 
       {/* watermark */}
@@ -25,7 +23,7 @@ const Hero = () => {
         Software Engineer
       </span>
 
-      <div className="relative z-10 mx-auto grid w-full max-w-[100rem] flex-1 grid-cols-1 items-center gap-10 px-6 pb-0 pt-28 sm:px-10 lg:grid-cols-[1fr_auto_1fr] lg:gap-12 lg:px-16 lg:pt-16 xl:px-20">
+      <div className="relative z-10 grid w-full flex-1 grid-cols-1 items-center gap-10 pb-0 pt-28 px-15 lg:grid-cols-[1fr_auto_1fr] lg:gap-12 lg:pt-16">
         {/* left */}
         <div className="order-2 flex flex-col items-center space-y-4 text-center lg:order-1 lg:translate-y-14 lg:items-start lg:text-left">
           <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-accent">
@@ -65,7 +63,7 @@ const Hero = () => {
       </div>
 
       {/* big name */}
-      <div className="relative z-10 mx-auto -mt-2 flex w-full max-w-[100rem] items-end justify-between px-6 pb-8 sm:px-10 lg:-mt-[7.5rem] lg:px-16 xl:px-20">
+      <div className="relative z-10 -mt-2 flex w-full items-end justify-between pb-8 px-15 lg:-mt-[7.5rem]">
         <span className="select-none font-heading text-[12.5vw] font-black leading-none tracking-tight text-foreground lg:text-[9vw]">
           EBUBE
         </span>

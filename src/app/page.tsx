@@ -8,7 +8,7 @@ import Testimonials from "@/components/sections/Testimonials";
 
 export default function Home() {
   return (
-    <main className="overflow-hidden">
+    <main className="w-full overflow-hidden">
       <Hero />
       <Marquee />
       <About />

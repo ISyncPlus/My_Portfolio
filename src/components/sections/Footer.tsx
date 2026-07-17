@@ -18,8 +18,8 @@ const LINKS = [
 
 const Footer = () => {
   return (
-    <footer id="contact" className="relative overflow-hidden bg-primary px-6 pb-10 pt-24 text-primary-foreground sm:px-10 lg:pt-32">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 text-center">
+    <footer id="contact" className="relative overflow-hidden bg-primary pb-10 pt-24 text-primary-foreground lg:pt-32">
+      <div className="mx-auto flex w-full max-w-[100rem] flex-col items-center gap-8 px-6 text-center sm:px-10 lg:px-16 xl:px-20">
         <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em]">
           <HexBullet />
           Available for work
