@@ -41,6 +41,17 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Contact form email
+
+The contact form sends messages to `eezedimbu@gmail.com` through [Resend](https://resend.com/docs/api-reference/emails/send-email). To enable delivery, verify a sending domain in Resend and set these server-side environment variables locally and in Vercel:
+
+```text
+RESEND_API_KEY=your_resend_api_key
+CONTACT_FROM_EMAIL=Ebube Portfolio <hello@your-verified-domain.com>
+```
+
+Keep the API key private. If either variable is missing or sending fails, the form shows an error and offers a direct email link.
+
 ## Development
 
 You can start editing the page by modifying `src/app/page.tsx` (or `app/page.tsx` depending on your setup). The page auto-updates as you edit the file.

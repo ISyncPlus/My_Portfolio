@@ -21,7 +21,7 @@ const Hero = () => {
         Creative Developer
       </span>
 
-      <div className="relative z-10 mx-auto grid w-full max-w-[100rem] flex-1 grid-cols-1 items-center gap-5 px-6 pb-20 pt-52 sm:px-10 lg:grid-cols-[minmax(0,1fr)_530px_minmax(0,1fr)] lg:gap-6 lg:px-16 lg:pb-16 lg:pt-36 xl:px-20">
+      <div className="relative z-10 mx-auto grid w-full max-w-[100rem] flex-1 grid-cols-1 items-center gap-5 px-6 pb-20 pt-44 sm:px-10 lg:grid-cols-[minmax(0,1fr)_530px_minmax(0,1fr)] lg:gap-6 lg:px-16 lg:pb-16 lg:pt-36 xl:px-20">
         <div className="order-2 flex flex-col items-center space-y-4 text-center lg:order-1 lg:translate-y-14 lg:items-start lg:text-left">
           <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-accent">
             <HexBullet />
@@ -40,20 +40,20 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="order-3 flex flex-col items-center space-y-6 text-center lg:items-start lg:justify-self-end lg:translate-y-14 lg:text-left">
-          <p className="max-w-md leading-relaxed text-foreground/80 lg:max-w-sm">
+        <div className="order-3 flex flex-col items-center gap-6 text-center lg:items-start lg:justify-self-end lg:translate-y-14 lg:text-left">
+          <p className="order-2 max-w-md leading-relaxed text-foreground/80 lg:order-1 lg:max-w-sm">
             I&apos;m Ebube Ezedimbu. I turn ambitious ideas into useful web and mobile experiences, from the first interaction to the systems behind it.
           </p>
           <a
             href="#works"
-            className="inline-flex items-center gap-3 rounded-full bg-primary py-2 pl-2 pr-6 font-semibold text-primary-foreground transition-transform hover:scale-[1.03] active:scale-95"
+            className="order-1 inline-flex items-center gap-3 rounded-full bg-primary py-2 pl-2 pr-6 font-semibold text-primary-foreground transition-transform hover:scale-[1.03] active:scale-95 lg:order-2"
           >
             <span className="flex size-9 items-center justify-center rounded-full bg-primary-foreground text-primary">
               <ArrowRight className="size-4" />
             </span>
             Explore my work
           </a>
-          <a href="#contact" className="font-semibold text-foreground underline decoration-foreground/30 underline-offset-4 hover:decoration-foreground">
+          <a href="#contact" className="order-3 font-semibold text-foreground underline decoration-foreground/30 underline-offset-4 hover:decoration-foreground">
             Let&apos;s talk about your idea
           </a>
         </div>

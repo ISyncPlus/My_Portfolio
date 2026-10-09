@@ -43,7 +43,7 @@ export default function Experience() {
   return (
     <section id="experience" className="bg-background py-24 lg:py-32">
       <div className="mx-auto w-full max-w-[100rem] px-6 sm:px-10 lg:px-16 xl:px-20">
-        <SectionHeading chip="Experience" title="Where I&apos;ve put the work in" subtitle="Product teams, client work, and hands-on engineering across web and mobile." />
+        <SectionHeading chip="Experience" title="Where I've put the work in" subtitle="Product teams, client work, and hands-on engineering across web and mobile." />
         <div className="mt-14 border-t border-foreground/15">
           {ROLES.map((item, index) => (
             <article key={item.company} className="grid gap-3 border-b border-foreground/15 py-7 md:grid-cols-[3rem_minmax(0,1fr)_minmax(0,1.2fr)_10rem] md:items-start md:gap-6 md:py-9">
