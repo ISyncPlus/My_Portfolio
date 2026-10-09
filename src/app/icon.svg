@@ -1,5 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="18" fill="#221e35"/>
-  <path d="M32 7 53.7 19.5v25L32 57 10.3 44.5v-25L32 7Z" fill="none" stroke="#f5d871" stroke-width="3"/>
-  <path d="M24 19h18v5H29v6h11v5H29v6h13v5H24V19Z" fill="#f5d871"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="logoGold" x1="16" y1="8" x2="48" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF0A0"/>
+      <stop offset="0.45" stop-color="#F5D871"/>
+      <stop offset="1" stop-color="#D4A728"/>
+    </linearGradient>
+    <linearGradient id="logoBg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#221D35"/>
+      <stop offset="1" stop-color="#120F1D"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#logoBg)" stroke="#F5D871" stroke-opacity="0.3" stroke-width="1.5"/>
+  <path d="M17 18L32 9.5L47 18V24H27V29.5H38.5V34.5H27V40H47V46L32 54.5L17 46V18Z" fill="url(#logoGold)" stroke="url(#logoGold)" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="44" cy="32" r="2.8" fill="#8B7CF7"/>
 </svg>

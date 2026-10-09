@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
+import Logo from "@/components/Logo";
+
 const HexBullet = () => (
   <svg viewBox="0 0 24 24" className="size-3.5 text-accent" fill="currentColor" aria-hidden>
     <path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2z" />
@@ -58,9 +60,10 @@ const Footer = () => {
               </a>
             ))}
           </nav>
-          <p className="text-sm text-primary-foreground/60">
-            © 2026 Ebube Ezedimbu. All rights reserved.
-          </p>
+          <div className="flex items-center gap-2.5 text-sm text-primary-foreground/75">
+            <Logo size={18} className="shrink-0 text-primary-foreground/90" />
+            <span>© 2026 Ebube Ezedimbu. All rights reserved.</span>
+          </div>
         </div>
       </div>
     </footer>

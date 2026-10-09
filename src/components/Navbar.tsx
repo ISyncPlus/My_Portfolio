@@ -2,6 +2,7 @@
 
 import { Menu } from "lucide-react";
 
+import Logo from "@/components/Logo";
 import { ThemeToggleButton } from "@/components/ui/theme/theme-toggle";
 
 const socials = [
@@ -30,9 +31,10 @@ const Navbar = () => {
     <header className="absolute inset-x-0 top-0 z-30">
       <div className="mx-auto flex w-full max-w-[100rem] items-center justify-between px-6 py-5 sm:px-10 lg:px-16 xl:px-20">
         <details className="group relative">
-          <summary className="flex cursor-pointer list-none items-center gap-3 rounded-full bg-primary px-6 py-3 font-heading text-lg font-bold text-primary-foreground transition-transform active:scale-95 [&::-webkit-details-marker]:hidden">
-            Ebube
-            <Menu className="size-5" strokeWidth={2.5} aria-hidden="true" />
+          <summary className="flex cursor-pointer list-none items-center gap-2.5 rounded-full bg-primary py-2.5 pl-3.5 pr-5 font-heading text-lg font-bold text-primary-foreground shadow-sm transition-transform active:scale-95 [&::-webkit-details-marker]:hidden">
+            <Logo size={22} className="shrink-0 text-primary-foreground" />
+            <span>Ebube</span>
+            <Menu className="ml-0.5 size-4.5 stroke-[2.5]" aria-hidden="true" />
           </summary>
           <nav aria-label="Main menu" className="absolute left-0 top-[calc(100%+0.75rem)] flex min-w-44 flex-col rounded-2xl border border-foreground/10 bg-card p-2 shadow-xl">
             {[
