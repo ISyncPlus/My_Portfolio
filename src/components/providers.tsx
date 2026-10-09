@@ -9,9 +9,9 @@ import ClickSpark from "@/components/ClickSpark";
 const SparkLayer = ({ children }: { children: React.ReactNode }) => {
   const { resolvedTheme } = useTheme();
 
-  // Yellow sparks on dark, navy sparks on light
+  // Lavender sparks on dark, navy sparks on light
   const sparkColor =
-    resolvedTheme === "dark" ? "#f5d871" : "#221e35";
+    resolvedTheme === "dark" ? "#c5baff" : "#221e35";
 
   return (
     <ClickSpark

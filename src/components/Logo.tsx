@@ -32,16 +32,16 @@ export const Logo = ({
       >
         <defs>
           <linearGradient
-            id="logoGoldBadge"
+            id="logoVioletBadge"
             x1="16"
             y1="8"
             x2="48"
             y2="56"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#FFF0A0" />
-            <stop offset="0.45" stopColor="#F5D871" />
-            <stop offset="1" stopColor="#D4A728" />
+            <stop stopColor="#E5DFFF" />
+            <stop offset="0.45" stopColor="#C5BAFF" />
+            <stop offset="1" stopColor="#8874DC" />
           </linearGradient>
           <linearGradient
             id="logoBgBadge"
@@ -60,14 +60,14 @@ export const Logo = ({
           height="64"
           rx="16"
           fill="url(#logoBgBadge)"
-          stroke="rgba(245,216,113,0.25)"
+          stroke="rgba(197,186,255,0.25)"
           strokeWidth="1.5"
         />
         {/* Sculpted Hex-E */}
         <path
           d="M17 18L32 9.5L47 18V24H27V29.5H38.5V34.5H27V40H47V46L32 54.5L17 46V18Z"
-          fill="url(#logoGoldBadge)"
-          stroke="url(#logoGoldBadge)"
+          fill="url(#logoVioletBadge)"
+          stroke="url(#logoVioletBadge)"
           strokeWidth="1.2"
           strokeLinejoin="round"
           strokeLinecap="round"
@@ -93,16 +93,16 @@ export const Logo = ({
     >
       <defs>
         <linearGradient
-          id="logoGoldStandalone"
+          id="logoVioletStandalone"
           x1="0"
           y1="0"
           x2="40"
           y2="46"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FFF0A0" />
-          <stop offset="0.45" stopColor="#F5D871" />
-          <stop offset="1" stopColor="#D4A728" />
+          <stop stopColor="#E5DFFF" />
+          <stop offset="0.45" stopColor="#C5BAFF" />
+          <stop offset="1" stopColor="#8874DC" />
         </linearGradient>
       </defs>
       {/* Normalized path centered in 40x46 viewbox */}

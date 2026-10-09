@@ -40,6 +40,7 @@ const Navbar = () => {
             {[
               ["Work", "#works"],
               ["About", "#about"],
+              ["Experience", "#experience"],
               ["Expertise", "#expertise"],
               ["Contact", "#contact"],
             ].map(([label, href]) => (

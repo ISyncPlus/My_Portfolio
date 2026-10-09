@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import portrait from "../../design/my_image.jpg";
 
 /**
  * Honeycomb portrait — 14 pointy-top hexagon tiles (2-3-4-3-2 flower),
@@ -14,17 +15,17 @@ import { useEffect, useState } from "react";
 const HEX_W = 110; // hexagon width
 const HEX_H = (HEX_W * 2) / Math.sqrt(3); // ≈ 127
 const ROW_STEP = HEX_H * 0.75; // ≈ 95.3
-const GAP = 5; // yellow seams between tiles
+const GAP = 5;
 
 const CLUSTER_W = HEX_W * 6; // 660
 const CLUSTER_H = ROW_STEP * 6 + HEX_H; // ≈ 698
 const CX = CLUSTER_W / 2;
 const CY = CLUSTER_H / 2;
 
-// Portrait covers the whole cluster
-const IMG_SIZE = 750;
-const IMG_X = (CLUSTER_W - IMG_SIZE) / 2;
-const IMG_Y = (CLUSTER_H - IMG_SIZE) / 2;
+// Keep the original portrait's aspect ratio so the whole face fits the cluster.
+const IMG_W = CLUSTER_W;
+const IMG_H = IMG_W * (portrait.height / portrait.width);
+const IMG_Y = -25;
 
 type Tile = { x: number; y: number; shade: number };
 
@@ -132,16 +133,16 @@ const HexTile = ({
           style={{ clipPath: HEX_CLIP, backfaceVisibility: "hidden" }}
         >
           <Image
-            src="/ebube.jpg"
+            src={portrait}
             alt=""
-            width={IMG_SIZE}
-            height={IMG_SIZE}
+            width={IMG_W}
+            height={IMG_H}
             priority
             className="pointer-events-none absolute max-w-none select-none"
             style={{
-              width: IMG_SIZE,
-              height: IMG_SIZE,
-              left: IMG_X - tile.x,
+              width: IMG_W,
+              height: IMG_H,
+              left: -tile.x,
               top: IMG_Y - tile.y,
             }}
           />

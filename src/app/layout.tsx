@@ -17,7 +17,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ebube-portfolio.ver
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f5d871" },
+    { media: "(prefers-color-scheme: light)", color: "#d8e1e7" },
     { media: "(prefers-color-scheme: dark)", color: "#16131f" },
   ],
   width: "device-width",

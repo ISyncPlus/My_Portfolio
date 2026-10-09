@@ -21,7 +21,7 @@ export default function OpenGraphImage() {
           position: "relative",
           backgroundColor: "#13101C",
           backgroundImage:
-            "radial-gradient(circle at 85% 15%, rgba(245, 216, 113, 0.16) 0%, transparent 45%), radial-gradient(circle at 15% 85%, rgba(139, 124, 247, 0.18) 0%, transparent 50%)",
+            "radial-gradient(circle at 85% 15%, rgba(197, 186, 255, 0.16) 0%, transparent 45%), radial-gradient(circle at 15% 85%, rgba(139, 124, 247, 0.18) 0%, transparent 50%)",
           color: "#F8F6F0",
           fontFamily:
             'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
@@ -29,7 +29,7 @@ export default function OpenGraphImage() {
           boxSizing: "border-box",
           flexDirection: "column",
           justifyContent: "space-between",
-          border: "2px solid rgba(245, 216, 113, 0.22)",
+          border: "2px solid rgba(197, 186, 255, 0.22)",
         }}
       >
         {/* Top Header Row: Category Badge & Site URL */}
@@ -46,8 +46,8 @@ export default function OpenGraphImage() {
               display: "flex",
               alignItems: "center",
               gap: "10px",
-              backgroundColor: "rgba(245, 216, 113, 0.12)",
-              border: "1.5px solid rgba(245, 216, 113, 0.35)",
+              backgroundColor: "rgba(197, 186, 255, 0.12)",
+              border: "1.5px solid rgba(197, 186, 255, 0.35)",
               padding: "10px 22px",
               borderRadius: "999px",
             }}
@@ -66,7 +66,7 @@ export default function OpenGraphImage() {
                 fontSize: "14px",
                 fontWeight: 800,
                 letterSpacing: "0.18em",
-                color: "#F5D871",
+                color: "#C5BAFF",
                 textTransform: "uppercase",
               }}
             >
@@ -85,8 +85,8 @@ export default function OpenGraphImage() {
             }}
           >
             <span>📍 Nigeria</span>
-            <span style={{ color: "rgba(245, 216, 113, 0.4)" }}>•</span>
-            <span style={{ color: "#F5D871" }}>Available for Work</span>
+            <span style={{ color: "rgba(197, 186, 255, 0.4)" }}>•</span>
+            <span style={{ color: "#C5BAFF" }}>Available for Work</span>
           </div>
         </div>
 
@@ -147,16 +147,16 @@ export default function OpenGraphImage() {
               height: "196px",
               borderRadius: "44px",
               backgroundColor: "#1A1627",
-              border: "2px solid rgba(245, 216, 113, 0.35)",
+              border: "2px solid rgba(197, 186, 255, 0.35)",
               boxShadow:
-                "0 20px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(245, 216, 113, 0.15)",
+                "0 20px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(197, 186, 255, 0.15)",
             }}
           >
             <svg width="128" height="128" viewBox="0 0 64 64" fill="none">
               <path
                 d="M17 18L32 9.5L47 18V24H27V29.5H38.5V34.5H27V40H47V46L32 54.5L17 46V18Z"
-                fill="#F5D871"
-                stroke="#F5D871"
+                fill="#C5BAFF"
+                stroke="#C5BAFF"
                 strokeWidth="1.2"
                 strokeLinejoin="round"
               />
@@ -172,7 +172,7 @@ export default function OpenGraphImage() {
             alignItems: "center",
             justifyContent: "space-between",
             width: "100%",
-            borderTop: "1px solid rgba(245, 216, 113, 0.16)",
+            borderTop: "1px solid rgba(197, 186, 255, 0.16)",
             paddingTop: "24px",
           }}
         >
@@ -189,7 +189,7 @@ export default function OpenGraphImage() {
                   key={tech}
                   style={{
                     backgroundColor: "rgba(34, 30, 53, 0.8)",
-                    border: "1px solid rgba(245, 216, 113, 0.2)",
+                    border: "1px solid rgba(197, 186, 255, 0.2)",
                     borderRadius: "10px",
                     padding: "7px 16px",
                     fontSize: "14px",
@@ -210,9 +210,9 @@ export default function OpenGraphImage() {
               gap: "8px",
               fontSize: "15px",
               fontWeight: 700,
-              color: "#F5D871",
-              backgroundColor: "rgba(245, 216, 113, 0.08)",
-              border: "1px solid rgba(245, 216, 113, 0.25)",
+              color: "#C5BAFF",
+              backgroundColor: "rgba(197, 186, 255, 0.08)",
+              border: "1px solid rgba(197, 186, 255, 0.25)",
               borderRadius: "10px",
               padding: "7px 18px",
             }}

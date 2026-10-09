@@ -25,12 +25,12 @@ const Hero = () => {
         <div className="order-2 flex flex-col items-center space-y-4 text-center lg:order-1 lg:translate-y-14 lg:items-start lg:text-left">
           <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-accent">
             <HexBullet />
-            Full-stack &amp; UI
+            Creative developer · Lagos, Nigeria
           </p>
           <h1 className="font-heading text-3xl font-extrabold leading-tight text-foreground sm:text-4xl lg:text-[2.25rem] xl:text-[2.6rem]">
-            Creative developer
+            Building digital
             <br />
-            based in Nigeria
+            experiences that feel clear.
           </h1>
         </div>
 
@@ -42,8 +42,7 @@ const Hero = () => {
 
         <div className="order-3 flex flex-col items-center space-y-6 text-center lg:items-start lg:justify-self-end lg:translate-y-14 lg:text-left">
           <p className="max-w-md leading-relaxed text-foreground/80 lg:max-w-sm">
-            Hi, I&apos;m Ebube Ezedimbu. I turn complex ideas into clear, useful
-            web experiences — from the first interaction to the systems behind it.
+            I&apos;m Ebube Ezedimbu. I turn ambitious ideas into useful web and mobile experiences, from the first interaction to the systems behind it.
           </p>
           <a
             href="#works"
@@ -53,6 +52,9 @@ const Hero = () => {
               <ArrowRight className="size-4" />
             </span>
             Explore my work
+          </a>
+          <a href="#contact" className="font-semibold text-foreground underline decoration-foreground/30 underline-offset-4 hover:decoration-foreground">
+            Let&apos;s talk about your idea
           </a>
         </div>
       </div>
