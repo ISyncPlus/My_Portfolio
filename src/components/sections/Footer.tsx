@@ -10,9 +10,8 @@ const HexBullet = () => (
 );
 
 const LINKS = [
-  { label: "GitHub", href: "https://github.com/" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/" },
-  { label: "X", href: "https://x.com/" },
+  { label: "GitHub", href: "https://github.com/ISyncPlus" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/ebube-ezedimbu/" },
   { label: "Email", href: "mailto:eezedimbu@gmail.com" },
 ];
 
@@ -22,7 +21,7 @@ const Footer = () => {
       <div className="mx-auto flex w-full max-w-[100rem] flex-col items-center gap-8 px-6 text-center sm:px-10 lg:px-16 xl:px-20">
         <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em]">
           <HexBullet />
-          Available for work
+          Let&apos;s connect
         </p>
 
         <motion.h2
@@ -32,7 +31,7 @@ const Footer = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl font-heading text-4xl font-extrabold leading-tight sm:text-6xl"
         >
-          Let&apos;s create your next big idea.
+          Have something worth building?
         </motion.h2>
 
         <a

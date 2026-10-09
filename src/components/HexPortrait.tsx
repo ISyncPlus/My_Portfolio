@@ -113,7 +113,7 @@ const HexTile = ({
         height: HEX_H - GAP,
         perspective: 800,
       }}
-      initial={{ opacity: 0, rotateY: 90 }}
+      initial={false}
       animate={{ opacity: 1, rotateY: 0 }}
       transition={{ delay: 0.15 + index * 0.06, duration: 0.55, ease: "easeOut" }}
     >

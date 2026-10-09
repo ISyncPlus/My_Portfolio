@@ -1,122 +1,149 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
-
+import { ArrowUpRight, Bot, Cloud, Fingerprint, Leaf, Network, Orbit } from "lucide-react";
 import SectionHeading from "@/components/sections/SectionHeading";
-
-/**
- * Selected Projects — grid of project cards.
- * TODO(Ebube): replace the placeholder projects below with your real work.
- */
 
 const PROJECTS = [
   {
-    title: "Project One",
-    tags: ["Development", "Design"],
-    year: "2026",
-    gradient: "from-[#6c5ce7] to-[#221e35]",
+    title: "Lodemark",
+    category: "Client website",
+    description: "A website for a managed cloud infrastructure and DevOps partner.",
+    tags: ["Web", "Client work"],
+    live: "https://www.lodemark.ai/",
+    source: null,
+    icon: Cloud,
+    visual: "bg-[#e9e5da] text-[#172a35]",
+    accent: "text-[#cf6d45]",
+    label: "Cloud, without the chaos.",
   },
   {
-    title: "Project Two",
-    tags: ["Development"],
-    year: "2025",
-    gradient: "from-[#f5d871] to-[#c4a232]",
+    title: "UnderStory",
+    category: "Dependency intelligence",
+    description: "A graph-based tool for tracing vulnerable dependency paths and finding where to break them.",
+    tags: ["Next.js", "Graph data"],
+    live: "https://under-story-pi.vercel.app/",
+    source: "https://github.com/ISyncPlus/UnderStory",
+    icon: Network,
+    visual: "bg-[#14263a] text-[#e9eee9]",
+    accent: "text-[#ff7255]",
+    label: "See the path beneath.",
   },
   {
-    title: "Project Three",
-    tags: ["Development", "Design"],
-    year: "2025",
-    gradient: "from-[#221e35] to-[#4d4768]",
+    title: "Provenance",
+    category: "Image verification",
+    description: "A coursework tool that checks image metadata and gives students and reviewers an auditable record.",
+    tags: ["Next.js", "Verification"],
+    live: "https://provenance-imvs.vercel.app/",
+    source: "https://github.com/ISyncPlus/Provenance_Client",
+    icon: Fingerprint,
+    visual: "bg-[#d9e1e7] text-[#18304a]",
+    accent: "text-[#486ea8]",
+    label: "Evidence you can examine.",
   },
   {
-    title: "Project Four",
-    tags: ["Development"],
-    year: "2024",
-    gradient: "from-[#8b7cf7] to-[#6c5ce7]",
+    title: "Axiom AI",
+    category: "AI experiment",
+    description: "A text summarizer that turns pasted writing or links into something quicker to read.",
+    tags: ["AI", "Web app"],
+    live: "https://axiom-ai.vercel.app/",
+    source: "https://github.com/ISyncPlus/axiom-ai",
+    icon: Bot,
+    visual: "bg-[#26777a] text-[#effbf4]",
+    accent: "text-[#b9e9df]",
+    label: "Less reading. More clarity.",
+  },
+  {
+    title: "Hydra VR",
+    category: "Landing page",
+    description: "A responsive landing page concept for a virtual reality experience.",
+    tags: ["React", "Tailwind CSS"],
+    live: "https://hydra-plum-eight.vercel.app/",
+    source: "https://github.com/ISyncPlus/hydra-landing-page",
+    icon: Orbit,
+    visual: "bg-[#302b42] text-[#e9e3fb]",
+    accent: "text-[#b7a6e0]",
+    label: "Step into another world.",
+  },
+  {
+    title: "Planty",
+    category: "Storefront concept",
+    description: "A houseplant storefront with a responsive shop and a softer, editorial feel.",
+    tags: ["React", "E-commerce"],
+    live: "https://planty-chi.vercel.app/",
+    source: "https://github.com/ISyncPlus/planty",
+    icon: Leaf,
+    visual: "bg-[#dfe8c5] text-[#223a2a]",
+    accent: "text-[#628264]",
+    label: "A little more green.",
   },
 ];
 
-const HEX_CLIP = "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)";
-
-const Projects = () => {
+export default function Projects() {
   return (
     <section id="works" className="relative bg-background py-24 lg:py-32">
-      <div className="mx-auto flex w-full max-w-[100rem] flex-col gap-14 px-6 sm:px-10 lg:px-16 xl:px-20">
+      <div className="mx-auto flex w-full max-w-[100rem] flex-col gap-12 px-6 sm:px-10 lg:px-16 xl:px-20">
         <SectionHeading
           chip="My Work"
-          title="Selected Projects"
-          subtitle="Here's a curated selection showcasing my expertise and the achieved results."
+          title="Selected projects"
+          subtitle="A mix of client work, experiments, and products built to solve real problems."
         />
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-          {PROJECTS.map((project, i) => (
-            <motion.a
-              key={project.title}
-              href="#"
-              initial={{ opacity: 0, y: 32 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.55, delay: (i % 2) * 0.12 }}
-              className="group flex flex-col gap-4"
-            >
-              <div
-                className={`relative aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br ${project.gradient}`}
+        <div className="grid grid-cols-1 gap-x-7 gap-y-14 md:grid-cols-2 xl:gap-x-10">
+          {PROJECTS.map((project, index) => {
+            const Icon = project.icon;
+            return (
+              <motion.article
+                key={project.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: (index % 2) * 0.08 }}
+                className="group min-w-0"
               >
-                {/* hexagon motif */}
-                <div
-                  className="absolute right-8 top-8 size-24 bg-white/10 transition-transform duration-500 group-hover:rotate-[30deg]"
-                  style={{ clipPath: HEX_CLIP }}
-                />
-                <div
-                  className="absolute bottom-10 left-10 size-16 bg-white/10 transition-transform duration-700 group-hover:-translate-y-2"
-                  style={{ clipPath: HEX_CLIP }}
-                />
-                <span className="absolute inset-0 flex items-center justify-center font-heading text-2xl font-extrabold text-white/70 transition-transform duration-500 group-hover:scale-105">
-                  {project.title}
-                </span>
-                <span className="absolute right-4 top-4 flex size-10 translate-y-2 items-center justify-center rounded-full bg-background text-foreground opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                  <ArrowUpRight className="size-5" />
-                </span>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="space-y-1.5">
-                  <h3 className="font-heading text-xl font-bold text-foreground">
-                    {project.title}
-                  </h3>
-                  <div className="flex gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-foreground/20 px-3 py-1 text-xs font-semibold text-foreground/70"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View ${project.title} live`}
+                  className={`relative flex aspect-[4/3] flex-col justify-between overflow-hidden rounded-[1.75rem] p-7 transition-transform duration-300 group-hover:-translate-y-1 sm:aspect-[16/11] sm:p-10 ${project.visual}`}
+                >
+                  <span className="pointer-events-none absolute -right-12 -top-20 size-[65%] rounded-full border-[24px] border-current opacity-[0.08] transition-transform duration-500 group-hover:scale-110" aria-hidden="true" />
+                  <span className="pointer-events-none absolute -bottom-28 -left-14 size-[58%] rounded-full border-[32px] border-current opacity-[0.06]" aria-hidden="true" />
+                  <span className="relative z-10 flex items-start justify-between gap-4">
+                    <span className="text-xs font-bold uppercase tracking-[0.2em] opacity-70">{project.category}</span>
+                    <ArrowUpRight className="size-6 shrink-0 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
+                  </span>
+                  <span className="relative z-10 flex items-end justify-between gap-4">
+                    <span>
+                      <Icon className={`mb-5 size-9 sm:size-11 ${project.accent}`} strokeWidth={1.5} aria-hidden="true" />
+                      <span className="block font-heading text-[clamp(2.2rem,5vw,4.5rem)] font-black leading-none tracking-[-0.06em]">{project.title}</span>
+                      <span className="mt-3 block text-sm font-medium opacity-75 sm:text-base">{project.label}</span>
+                    </span>
+                    <span className="hidden rounded-full border border-current px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.15em] opacity-70 sm:block">0{index + 1}</span>
+                  </span>
+                </a>
+
+                <div className="mt-5 flex flex-wrap items-start justify-between gap-4 px-1">
+                  <div className="max-w-md">
+                    <h3 className="font-heading text-xl font-extrabold text-foreground">{project.title}</h3>
+                    <p className="mt-1.5 leading-relaxed text-foreground/70">{project.description}</p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span key={tag} className="rounded-full border border-foreground/20 px-3 py-1 text-xs font-semibold text-foreground/70">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex shrink-0 gap-4 text-sm font-bold">
+                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 underline decoration-foreground/30 underline-offset-4 hover:decoration-foreground">Live <ArrowUpRight className="size-4" aria-hidden="true" /></a>
+                    {project.source && <a href={project.source} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 underline decoration-foreground/30 underline-offset-4 hover:decoration-foreground">Code <ArrowUpRight className="size-4" aria-hidden="true" /></a>}
                   </div>
                 </div>
-                <span className="font-heading text-lg font-bold text-foreground/50">
-                  {project.year}
-                </span>
-              </div>
-            </motion.a>
-          ))}
-        </div>
-
-        <div className="flex justify-center">
-          <a
-            href="#"
-            className="inline-flex items-center gap-3 rounded-full bg-primary py-2 pl-2 pr-6 font-semibold text-primary-foreground transition-transform hover:scale-[1.03] active:scale-95"
-          >
-            <span className="flex size-9 items-center justify-center rounded-full bg-primary-foreground text-primary">
-              <ArrowRight className="size-4" />
-            </span>
-            View All Projects
-          </a>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>
   );
-};
-
-export default Projects;
+}

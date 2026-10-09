@@ -14,9 +14,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Ebube Ezedimbu — Software Engineer",
+  title: "Ebube Ezedimbu — Creative Developer",
   description:
-    "Portfolio of Ebube Ezedimbu, a software engineer based in Nigeria building seamless digital experiences.",
+    "Ebube Ezedimbu is a developer based in Nigeria building thoughtful web interfaces, products, and full-stack applications.",
 };
 
 export default function RootLayout({

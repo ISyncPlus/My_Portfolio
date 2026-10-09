@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -54,17 +54,10 @@ const POLYGON_TOP_LEFT_CSS = `
 `;
 
 export const useThemeToggle = () => {
-  const { theme, setTheme, resolvedTheme } = useTheme();
-  const [isDark, setIsDark] = useState(false);
-
-  // Sync isDark state with resolved theme after hydration
-  useEffect(() => {
-    setIsDark(resolvedTheme === "dark");
-  }, [resolvedTheme]);
+  const { setTheme, resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
 
   const toggleTheme = useCallback(() => {
-    setIsDark(!isDark);
-
     if (typeof window === "undefined") return;
 
     const styleId = "theme-transition-styles";
@@ -77,7 +70,7 @@ export const useThemeToggle = () => {
     styleElement.textContent = POLYGON_TOP_LEFT_CSS;
 
     const switchTheme = () => {
-      setTheme(theme === "light" ? "dark" : "light");
+      setTheme(isDark ? "light" : "dark");
     };
 
     if (!document.startViewTransition) {
@@ -86,7 +79,7 @@ export const useThemeToggle = () => {
     }
 
     document.startViewTransition(switchTheme);
-  }, [theme, setTheme, isDark]);
+  }, [setTheme, isDark]);
 
   return { isDark, toggleTheme };
 };

@@ -7,25 +7,24 @@ import SectionHeading from "@/components/sections/SectionHeading";
 const AREAS = [
   {
     n: "01",
-    title: "Development",
-    text: "Building fast, accessible, production-grade web applications with modern stacks — from pixel-perfect frontends to robust APIs.",
+    title: "Web interfaces",
+    text: "Responsive, accessible experiences that make a strong first impression and stay easy to use.",
   },
   {
     n: "02",
-    title: "UI/UX Design",
-    text: "Designing clean, purposeful interfaces that feel effortless — grounded in user needs and refined through iteration.",
+    title: "Full-stack apps",
+    text: "Connecting polished frontends to APIs, databases, and the logic that makes products useful.",
   },
   {
     n: "03",
-    title: "Branding",
-    text: "Crafting cohesive visual identities and design systems that make products memorable and consistent everywhere.",
+    title: "Product thinking",
+    text: "Turning a brief into a clear path through the product, from the first screen to the final detail.",
   },
 ];
 
 const SKILLS = [
-  "HTML", "CSS", "JavaScript", "TypeScript", "React.js", "Next.js",
-  "Redux", "Node.js", "Express.js", "MongoDB", "PostgreSQL", "Docker",
-  "Firebase", "AWS", "Framer Motion", "Figma", "Tailwind CSS", "Git",
+  "HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js",
+  "Node.js", "Express", "PostgreSQL", "Prisma", "Tailwind CSS", "Git",
 ];
 
 const SkillRow = ({ reverse = false }: { reverse?: boolean }) => (

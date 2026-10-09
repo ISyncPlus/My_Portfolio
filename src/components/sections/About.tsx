@@ -2,10 +2,8 @@
 
 import { motion } from "framer-motion";
 
-/** About Me — per-word scroll reveal, react-bits ScrollReveal style, hand-rolled. */
-
 const TEXT =
-  "I'm Ebube Ezedimbu, a software engineer with a strong focus on producing high quality & impactful digital experiences. I've worked with innovative teams to design, build and ship top-notch products that connect and convert.";
+  "I'm Ebube Ezedimbu, a developer who likes making complicated ideas feel simple. I build thoughtful interfaces and the systems behind them, with equal care for how a product works and how it feels to use.";
 
 const About = () => {
   const words = TEXT.split(" ");
