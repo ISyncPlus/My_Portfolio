@@ -12,13 +12,13 @@ const SectionHeading = ({
   subtitle?: string;
 }) => {
   return (
-    <div className="flex flex-col items-center gap-4 text-center">
+    <div className="flex flex-col items-start gap-4 text-left">
       <motion.span
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.5 }}
-        className="rounded-full border border-foreground/20 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-foreground/70"
+        className="border-t border-foreground/25 pt-6 text-xs font-bold uppercase tracking-[0.2em] text-accent"
       >
         {chip}
       </motion.span>
@@ -27,7 +27,7 @@ const SectionHeading = ({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="font-heading text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+        className="max-w-4xl font-heading text-4xl font-black tracking-[-0.055em] text-foreground sm:text-5xl lg:text-6xl"
       >
         {title}
       </motion.h2>

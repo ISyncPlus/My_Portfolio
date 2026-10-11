@@ -1,74 +1,52 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
-import HexPortrait from "@/components/HexPortrait";
+import portrait from "../../design/my_image.jpg";
 import Navbar from "@/components/Navbar";
 
-const HexBullet = () => (
-  <svg viewBox="0 0 24 24" className="size-3.5 text-accent" fill="currentColor" aria-hidden>
-    <path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2z" />
-  </svg>
-);
-
-const Hero = () => {
+export default function Hero() {
   return (
-    <section className="hero-mobile-stripes relative flex min-h-screen flex-col overflow-hidden bg-background">
+    <section id="home" className="relative min-h-screen overflow-hidden border-b border-foreground/15 bg-background">
       <Navbar />
+      <div className="pointer-events-none absolute inset-0 hero-grid opacity-50" aria-hidden="true" />
 
-      <span
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-36 z-0 w-full -translate-x-1/2 select-none text-center font-heading text-[14vw] font-black uppercase leading-none tracking-tight text-foreground opacity-[0.06] lg:top-[20%] lg:whitespace-nowrap lg:text-[8.5vw]"
-      >
-        Creative Developer
-      </span>
-
-      <div className="relative z-10 mx-auto grid w-full max-w-[100rem] flex-1 grid-cols-1 items-center gap-5 px-6 pb-20 pt-44 sm:px-10 lg:grid-cols-[minmax(0,1fr)_530px_minmax(0,1fr)] lg:gap-6 lg:px-16 lg:pb-16 lg:pt-36 xl:px-20">
-        <div className="order-2 flex flex-col items-center space-y-4 text-center lg:order-1 lg:translate-y-14 lg:items-start lg:text-left">
-          <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-accent">
-            <HexBullet />
-            Creative developer · Lagos, Nigeria
+      <div className="relative mx-auto grid min-h-screen w-full max-w-[100rem] items-end gap-14 px-6 pb-12 pt-32 sm:px-10 lg:grid-cols-[minmax(0,1.18fr)_minmax(360px,0.82fr)] lg:gap-12 lg:px-16 lg:pb-16 xl:px-20">
+        <div className="relative z-10 flex flex-col items-start pb-3 lg:pb-6">
+          <p className="mb-8 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-accent sm:text-sm">
+            <span className="size-2.5 rounded-full bg-accent shadow-[0_0_0_5px_rgb(24_94_100_/_0.12)]" />
+            Ebube Ezedimbu · Creative developer
           </p>
-          <h1 className="font-heading text-3xl font-extrabold leading-tight text-foreground sm:text-4xl lg:text-[2.25rem] xl:text-[2.6rem]">
-            Building digital
-            <br />
-            experiences that feel clear.
+          <h1 className="max-w-[13ch] font-heading text-[clamp(3.6rem,8vw,8.5rem)] font-black leading-[0.96] tracking-[-0.075em] text-foreground">
+            I build digital <span className="text-accent">things</span> that feel human.
           </h1>
-        </div>
-
-        <div className="order-1 flex justify-center lg:order-2">
-          <div className="relative z-20 h-[307px] w-[290px] max-[359px]:h-[245px] max-[359px]:w-[232px] min-[400px]:h-[385px] min-[400px]:w-[365px] sm:h-[525px] sm:w-[495px] lg:h-[560px] lg:w-[530px]">
-            <HexPortrait className="origin-top-left scale-[0.44] max-[359px]:scale-[0.35] min-[400px]:scale-[0.55] sm:scale-75 lg:scale-[0.8]" />
+          <div className="mt-10 grid w-full gap-8 border-t border-foreground/25 pt-6 sm:grid-cols-[1fr_auto] sm:items-end lg:mt-14">
+            <p className="max-w-lg text-base leading-relaxed text-foreground/70 sm:text-lg">
+              From considered interfaces to useful products, I turn complex ideas into experiences people enjoy using.
+            </p>
+            <a href="#works" className="group inline-flex w-fit items-center gap-3 rounded-full border border-foreground/30 px-5 py-3 text-sm font-bold text-foreground transition-colors hover:border-accent hover:bg-accent hover:text-accent-foreground">
+              Explore my work <ArrowDownRight className="size-4 transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
+            </a>
+          </div>
+          <div className="mt-12 flex flex-wrap gap-x-7 gap-y-3 text-xs font-bold uppercase tracking-[0.14em] text-foreground/60">
+            <a className="inline-flex items-center gap-1 hover:text-foreground" href="https://github.com/ISyncPlus" target="_blank" rel="noopener noreferrer">GitHub <ArrowUpRight className="size-3.5" /></a>
+            <a className="inline-flex items-center gap-1 hover:text-foreground" href="https://www.linkedin.com/in/ebube-ezedimbu/" target="_blank" rel="noopener noreferrer">LinkedIn <ArrowUpRight className="size-3.5" /></a>
+            <a className="inline-flex items-center gap-1 hover:text-foreground" href="mailto:eezedimbu@gmail.com">Email <ArrowUpRight className="size-3.5" /></a>
           </div>
         </div>
 
-        <div className="order-3 flex flex-col items-center gap-6 text-center lg:items-start lg:justify-self-end lg:translate-y-14 lg:text-left">
-          <p className="order-2 max-w-md leading-relaxed text-foreground/80 lg:order-1 lg:max-w-sm">
-            I&apos;m Ebube Ezedimbu. I turn ambitious ideas into useful web and mobile experiences, from the first interaction to the systems behind it.
-          </p>
-          <a
-            href="#works"
-            className="order-1 inline-flex items-center gap-3 rounded-full bg-primary py-2 pl-2 pr-6 font-semibold text-primary-foreground transition-transform hover:scale-[1.03] active:scale-95 lg:order-2"
-          >
-            <span className="flex size-9 items-center justify-center rounded-full bg-primary-foreground text-primary">
-              <ArrowRight className="size-4" />
-            </span>
-            Explore my work
-          </a>
-          <a href="#contact" className="order-3 font-semibold text-foreground underline decoration-foreground/30 underline-offset-4 hover:decoration-foreground">
-            Let&apos;s talk about your idea
-          </a>
+        <div className="relative mx-auto w-full max-w-[580px] lg:mb-2 lg:max-w-none">
+          <div className="absolute -left-5 -top-5 h-[calc(100%-1.25rem)] w-[calc(100%-1.25rem)] rounded-[2rem] border border-accent/45 sm:-left-7 sm:-top-7" aria-hidden="true" />
+          <div className="relative overflow-hidden rounded-[2rem] bg-[#acb9bd] shadow-[0_30px_90px_rgb(18_28_38_/_0.16)]">
+            <div className="relative aspect-[4/5] w-full">
+              <Image src={portrait} alt="Ebube Ezedimbu" fill priority placeholder="blur" sizes="(max-width: 1023px) 100vw, 40vw" className="object-cover object-top" />
+            </div>
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#1c1c2b]/75 to-transparent px-7 pb-7 pt-20 text-white">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/75">Currently based in</p>
+              <p className="mt-1 font-heading text-2xl font-bold">Lagos, Nigeria ↗</p>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="relative z-10 mx-auto hidden w-full max-w-[100rem] items-end justify-between px-16 pb-8 lg:-mt-[7.5rem] lg:flex xl:px-20 gap-10">
-        <span className="select-none font-heading text-[12.5vw] font-black leading-none tracking-tight text-foreground lg:text-[9vw]">
-          EBUBE
-        </span>
-        <span className="select-none font-heading text-[12.5vw] font-black leading-none tracking-tight text-foreground lg:text-[9vw]">
-          EZEDIMBU
-        </span>
       </div>
     </section>
   );
-};
-
-export default Hero;
+}

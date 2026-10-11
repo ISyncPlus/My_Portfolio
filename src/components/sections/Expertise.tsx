@@ -24,7 +24,7 @@ const AREAS = [
 
 const SKILLS = [
   "HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js",
-  "React Native", "Flutter", "Dart", "Express.js", "TanStack Query", "Tailwind CSS", "Git",
+  "React Native", "Flutter", "Dart", "Python", "C++", "Express.js", "TanStack Query", "Tailwind CSS", "Git",
 ];
 
 const SkillRow = ({ reverse = false }: { reverse?: boolean }) => (

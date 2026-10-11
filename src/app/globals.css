@@ -29,6 +29,18 @@
   }
 }
 
+html { scroll-behavior: smooth; }
+
+.hero-grid {
+  background-image: linear-gradient(to right, rgb(34 30 53 / 0.055) 1px, transparent 1px), linear-gradient(to bottom, rgb(34 30 53 / 0.055) 1px, transparent 1px);
+  background-size: 88px 88px;
+  mask-image: linear-gradient(to right, transparent, black 55%, transparent);
+}
+
+.dark .hero-grid {
+  background-image: linear-gradient(to right, rgb(242 237 224 / 0.045) 1px, transparent 1px), linear-gradient(to bottom, rgb(242 237 224 / 0.045) 1px, transparent 1px);
+}
+
 @media (max-width: 1023px) {
   .hero-mobile-stripes {
     background-image: repeating-linear-gradient(
