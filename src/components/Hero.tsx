@@ -59,7 +59,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto hidden w-full max-w-[100rem] items-end justify-between px-16 pb-8 lg:-mt-[7.5rem] lg:flex xl:px-20">
+      <div className="relative z-10 mx-auto hidden w-full max-w-[100rem] items-end justify-between px-16 pb-8 lg:-mt-[7.5rem] lg:flex xl:px-20 gap-10">
         <span className="select-none font-heading text-[12.5vw] font-black leading-none tracking-tight text-foreground lg:text-[9vw]">
           EBUBE
         </span>
