@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og-image.png",
-        secureUrl: "https://ebube-eze.vercel.app/og-image.png",
+        secureUrl: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "iSyncPlus — Creative Developer & UI Engineer Portfolio",
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
       },
       {
         url: "/og-image.jpg",
-        secureUrl: "https://ebube-eze.vercel.app/og-image.jpg",
+        secureUrl: `${siteUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: "iSyncPlus — Creative Developer & UI Engineer Portfolio",
