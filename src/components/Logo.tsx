@@ -7,9 +7,9 @@ interface LogoProps extends React.SVGProps<SVGSVGElement> {
 }
 
 /**
- * Minimalist Hex-E Logo Mark for iSyncPlus.
- * Combines the portfolio's signature hexagonal geometry with the letter 'E',
- * accented by an electric indigo kinetic spark.
+ * Minimalist Kinetic Sync S+ Logo Mark for iSyncPlus.
+ * Embodies seamless synchronization (two balanced orbital wings forming an 'S')
+ * united with a central precision '+' spark.
  */
 export const Logo = ({
   size = 32,
@@ -33,15 +33,15 @@ export const Logo = ({
         <defs>
           <linearGradient
             id="logoVioletBadge"
-            x1="16"
-            y1="8"
-            x2="48"
-            y2="56"
+            x1="14"
+            y1="12"
+            x2="50"
+            y2="52"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#E5DFFF" />
+            <stop stopColor="#F2EEFF" />
             <stop offset="0.45" stopColor="#C5BAFF" />
-            <stop offset="1" stopColor="#8874DC" />
+            <stop offset="1" stopColor="#9B8EFF" />
           </linearGradient>
           <linearGradient
             id="logoBgBadge"
@@ -51,7 +51,7 @@ export const Logo = ({
             y2="64"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#221D35" />
+            <stop stopColor="#241E38" />
             <stop offset="1" stopColor="#120F1D" />
           </linearGradient>
         </defs>
@@ -60,30 +60,37 @@ export const Logo = ({
           height="64"
           rx="16"
           fill="url(#logoBgBadge)"
-          stroke="rgba(197,186,255,0.25)"
+          stroke="#C5BAFF"
+          strokeOpacity="0.32"
           strokeWidth="1.5"
         />
-        {/* Sculpted Hex-E */}
+        {/* Top Wing of S (Sync) */}
         <path
-          d="M17 18L32 9.5L47 18V24H27V29.5H38.5V34.5H27V40H47V46L32 54.5L17 46V18Z"
+          d="M 14 30 C 14 17.5 24.5 12 37 12 C 45 12 49 15 50 18.5 C 47.5 18.5 42.5 17.5 37 17.5 C 26 17.5 20.5 23 20.5 30 Z"
           fill="url(#logoVioletBadge)"
-          stroke="url(#logoVioletBadge)"
-          strokeWidth="1.2"
-          strokeLinejoin="round"
+        />
+        {/* Bottom Wing of S (Sync) */}
+        <path
+          d="M 50 34 C 50 46.5 39.5 52 27 52 C 19 52 15 49 14 45.5 C 16.5 45.5 21.5 46.5 27 46.5 C 38 46.5 43.5 41 43.5 34 Z"
+          fill="url(#logoVioletBadge)"
+        />
+        {/* Central Kinetic Plus */}
+        <path
+          d="M 32 23 L 32 41 M 23 32 L 41 32"
+          stroke="#8B7CF7"
+          strokeWidth="4.5"
           strokeLinecap="round"
         />
-        {/* Indigo Spark */}
-        <circle cx="44" cy="32" r="2.8" fill="#8B7CF7" />
       </svg>
     );
   }
 
-  // Standalone vector mark without container
+  // Standalone minimalist vector mark
   return (
     <svg
       width={size}
       height={size}
-      viewBox="0 0 40 46"
+      viewBox="0 0 64 64"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
@@ -91,30 +98,23 @@ export const Logo = ({
       role="img"
       {...props}
     >
-      <defs>
-        <linearGradient
-          id="logoVioletStandalone"
-          x1="0"
-          y1="0"
-          x2="40"
-          y2="46"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#E5DFFF" />
-          <stop offset="0.45" stopColor="#C5BAFF" />
-          <stop offset="1" stopColor="#8874DC" />
-        </linearGradient>
-      </defs>
-      {/* Normalized path centered in 40x46 viewbox */}
+      {/* Top Wing of S */}
       <path
-        d="M2 9L17 0.5L32 9V15H12V20.5H23.5V25.5H12V31H32V37L17 45.5L2 37V9Z"
+        d="M 14 30 C 14 17.5 24.5 12 37 12 C 45 12 49 15 50 18.5 C 47.5 18.5 42.5 17.5 37 17.5 C 26 17.5 20.5 23 20.5 30 Z"
         fill="currentColor"
+      />
+      {/* Bottom Wing of S */}
+      <path
+        d="M 50 34 C 50 46.5 39.5 52 27 52 C 19 52 15 49 14 45.5 C 16.5 45.5 21.5 46.5 27 46.5 C 38 46.5 43.5 41 43.5 34 Z"
+        fill="currentColor"
+      />
+      {/* Central Plus Symbol */}
+      <path
+        d="M 32 23 L 32 41 M 23 32 L 41 32"
         stroke="currentColor"
-        strokeWidth="1"
-        strokeLinejoin="round"
+        strokeWidth="4.5"
         strokeLinecap="round"
       />
-      <circle cx="29" cy="23" r="2.8" fill="#8B7CF7" />
     </svg>
   );
 };

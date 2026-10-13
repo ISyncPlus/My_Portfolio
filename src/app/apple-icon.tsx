@@ -22,15 +22,24 @@ export default function AppleIcon() {
           border: "4px solid rgba(197, 186, 255, 0.35)",
         }}
       >
-        <svg width="112" height="112" viewBox="0 0 64 64" fill="none">
+        <svg width="116" height="116" viewBox="0 0 64 64" fill="none">
+          {/* Top Wing of S */}
           <path
-            d="M17 18L32 9.5L47 18V24H27V29.5H38.5V34.5H27V40H47V46L32 54.5L17 46V18Z"
+            d="M 14 30 C 14 17.5 24.5 12 37 12 C 45 12 49 15 50 18.5 C 47.5 18.5 42.5 17.5 37 17.5 C 26 17.5 20.5 23 20.5 30 Z"
             fill="#C5BAFF"
-            stroke="#C5BAFF"
-            strokeWidth="1.2"
-            strokeLinejoin="round"
           />
-          <circle cx="44" cy="32" r="3.2" fill="#8B7CF7" />
+          {/* Bottom Wing of S */}
+          <path
+            d="M 50 34 C 50 46.5 39.5 52 27 52 C 19 52 15 49 14 45.5 C 16.5 45.5 21.5 46.5 27 46.5 C 38 46.5 43.5 41 43.5 34 Z"
+            fill="#C5BAFF"
+          />
+          {/* Central Plus Symbol */}
+          <path
+            d="M 32 23 L 32 41 M 23 32 L 41 32"
+            stroke="#8B7CF7"
+            strokeWidth="4.5"
+            strokeLinecap="round"
+          />
         </svg>
       </div>
     ),
