@@ -1,74 +1,28 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-
 import Logo from "@/components/Logo";
-import ContactForm from "@/components/sections/ContactForm";
+import { PortalLink } from "@/components/RouteTransition";
 
-const HexBullet = () => (
-  <svg viewBox="0 0 24 24" className="size-3.5 text-[#9bd7d5]" fill="currentColor" aria-hidden>
-    <path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2z" />
-  </svg>
-);
+const links = [
+  ["Home", "/"], ["Work", "/work"], ["Craft", "/craft"],
+  ["Lab", "/lab"], ["About", "/about"], ["Contact", "/contact"],
+] as const;
 
-const LINKS = [
-  { label: "GitHub", href: "https://github.com/ISyncPlus" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/ebube-ezedimbu/" },
-  { label: "Email", href: "mailto:eezedimbu@gmail.com" },
-];
-
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer id="contact" className="relative overflow-hidden bg-[#1c1c2b] pb-10 pt-24 text-[#edf3f5] lg:pt-32">
-      <div className="mx-auto w-full max-w-[100rem] px-6 sm:px-10 lg:px-16 xl:px-20">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-          <div>
-            <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-[#9bd7d5]"><HexBullet /> Let&apos;s connect</p>
-            <motion.h2
-              initial={{ opacity: 0, y: 32 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6 }}
-              className="mt-7 max-w-2xl font-heading text-4xl font-extrabold leading-[1.08] sm:text-6xl"
-            >
-              Let&apos;s make something useful together.
-            </motion.h2>
-            <p className="mt-7 max-w-md text-lg leading-relaxed text-white/65">
-              Have a project, a role, or an idea in mind? Tell me what you&apos;re building and I&apos;ll reply by email.
-            </p>
-            <a href="mailto:eezedimbu@gmail.com" className="mt-8 inline-flex items-center gap-2 text-lg font-bold text-[#b4e0df] underline decoration-white/30 underline-offset-4 hover:decoration-white">
-              eezedimbu@gmail.com <ArrowUpRight className="size-5" aria-hidden="true" />
-            </a>
-          </div>
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-6 sm:p-9">
-            <p className="mb-7 text-xs font-bold uppercase tracking-[0.2em] text-[#b4e0df]">Send a message</p>
-            <ContactForm />
-          </div>
+    <footer className="bg-[#17151f] text-[#edf3f5]">
+      <div className="mx-auto max-w-[100rem] px-6 pb-8 pt-24 sm:px-10 lg:px-16 lg:pt-32 xl:px-20">
+        <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#9bd7d5]">Have something in mind?</p>
+        <div className="mt-5 flex flex-wrap items-end justify-between gap-8 border-b border-white/20 pb-16">
+          <h2 className="max-w-4xl font-heading text-[clamp(3.4rem,8vw,8rem)] font-black leading-[0.98] tracking-[-0.07em]">Let&apos;s make it <span className="text-[#9bd7d5]">matter.</span></h2>
+          <PortalLink href="/contact" className="flex size-20 items-center justify-center rounded-full border border-white/35 transition-all hover:rotate-45 hover:bg-[#9bd7d5] hover:text-[#17151f] sm:size-24" aria-label="Get in touch"><ArrowUpRight className="size-9" /></PortalLink>
         </div>
-
-        <div className="mt-20 flex w-full flex-col items-center justify-between gap-6 border-t border-white/15 pt-8 sm:flex-row">
-          <nav className="flex gap-6">
-            {LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith("http") ? "_blank" : undefined}
-                rel="noopener noreferrer"
-                className="text-sm font-semibold text-white/70 transition-colors hover:text-white"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-          <div className="flex items-center gap-2.5 text-sm text-white/75">
-            <Logo size={18} className="shrink-0 text-white/90" />
-            <span>© 2026 Ebube Ezedimbu. All rights reserved.</span>
-          </div>
+        <div className="grid gap-10 border-b border-white/15 py-10 sm:grid-cols-[1fr_auto_auto]">
+          <div className="flex items-start gap-3"><Logo size={26} className="text-[#9bd7d5]" /><div><p className="font-heading text-lg font-black">Ebube Ezedimbu</p><p className="mt-1 text-sm text-white/55">Creative developer · Lagos, Nigeria</p></div></div>
+          <nav aria-label="Footer navigation" className="grid grid-cols-2 gap-x-9 gap-y-2 text-sm font-semibold text-white/70">{links.map(([label, href]) => <PortalLink key={href} href={href} className="hover:text-white">{label}</PortalLink>)}</nav>
+          <div className="space-y-2 text-sm font-semibold text-white/70"><a className="block hover:text-white" href="https://github.com/ISyncPlus" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a className="block hover:text-white" href="https://www.linkedin.com/in/ebube-ezedimbu/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a className="block hover:text-white" href="mailto:eezedimbu@gmail.com">Email ↗</a></div>
         </div>
+        <div className="flex flex-wrap justify-between gap-3 pt-7 text-xs font-semibold uppercase tracking-[0.14em] text-white/45"><span>© 2026 Ebube Ezedimbu</span><span>Design minded. Engineering driven.</span></div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

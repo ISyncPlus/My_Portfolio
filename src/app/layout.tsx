@@ -3,6 +3,8 @@ import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 
 import { Providers } from "@/components/providers";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/sections/Footer";
 import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -54,9 +56,6 @@ export const metadata: Metadata = {
     "Software Engineer Portfolio",
   ],
   category: "technology",
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -124,7 +123,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body>
-        <Providers>{children}</Providers>
+        <Providers><Navbar />{children}<Footer /></Providers>
       </body>
     </html>
   );

@@ -31,6 +31,12 @@
 
 html { scroll-behavior: smooth; }
 
+.page-shell { width: 100%; max-width: 100rem; margin-inline: auto; padding-inline: clamp(1.5rem, 5vw, 5rem); }
+.page-display { font-family: var(--font-display), sans-serif; font-size: clamp(3.4rem, 7.5vw, 8.5rem); font-weight: 900; line-height: .98; letter-spacing: -.075em; }
+.eyebrow { font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .2em; }
+.round-link { display: inline-flex; align-items: center; gap: .65rem; border: 1px solid currentColor; border-radius: 999px; padding: .85rem 1.1rem; font-size: .875rem; font-weight: 700; transition: transform .3s, background-color .3s; }
+.round-link:hover { transform: translateY(-3px); }
+
 .orbit-scene {
   --scene-x: 0deg;
   --scene-y: 0deg;
@@ -52,13 +58,13 @@ html { scroll-behavior: smooth; }
 }
 
 .orbit-item-face {
-  display: flex;
+  display: block;
+  position: relative;
   width: 100%;
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  padding: 12px;
   border: 1px solid rgb(255 255 255 / 0.28);
   border-radius: 8px;
   background: var(--card-bg);
@@ -68,49 +74,33 @@ html { scroll-behavior: smooth; }
   transition: transform 450ms cubic-bezier(.2,.8,.2,1), box-shadow 450ms;
 }
 
+.orbit-item-face::after { content: ""; position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, rgb(0 0 0 / .72)); }
+.orbit-item-caption { position: absolute; z-index: 1; inset: auto 9px 9px; display: flex; justify-content: space-between; gap: 5px; color: white; font-size: .7rem; font-weight: 800; text-shadow: 0 1px 8px black; }
+
+.project-frame { transform-style: preserve-3d; transform: perspective(1200px) rotateY(-2deg); transition: transform 700ms cubic-bezier(.2,.8,.2,1), box-shadow 700ms; box-shadow: 0 15px 40px rgb(16 25 38 / .15); }
+.project-frame-image { transition: transform 900ms cubic-bezier(.2,.8,.2,1); }
+.group:hover .project-frame, .group:focus-within .project-frame { transform: perspective(1200px) rotateY(2deg) rotateX(-2deg) translateY(-7px); box-shadow: 0 40px 70px rgb(16 25 38 / .25); }
+.group:hover .project-frame-image, .group:focus-within .project-frame-image { transform: scale(1.055); }
+
+.lab-object-stage { background: radial-gradient(circle at 50% 45%, #2e4259, #111321 63%); perspective: 1000px; cursor: grab; }
+.lab-object-stage:active { cursor: grabbing; }
+.lab-orb { position: relative; width: min(42vw, 300px); height: min(42vw, 300px); transform-style: preserve-3d; transition: transform .15s ease-out; }
+.lab-orb span { position: absolute; inset: 0; border-radius: 20%; border: 1px solid rgb(255 255 255 / .65); box-shadow: inset 0 0 45px rgb(255 255 255 / .25), 0 25px 60px rgb(0 0 0 / .3); transform-style: preserve-3d; backdrop-filter: blur(5px); }
+.lab-orb span:nth-child(1) { background: linear-gradient(135deg, var(--orb-a), var(--orb-b)); transform: translateZ(80px); }
+.lab-orb span:nth-child(2) { background: color-mix(in srgb, var(--orb-b), transparent 35%); transform: rotateY(90deg) translateZ(80px); }
+.lab-orb span:nth-child(3) { background: color-mix(in srgb, var(--orb-c), transparent 25%); transform: rotateX(90deg) translateZ(80px); }
+.lab-orb span:nth-child(4) { background: linear-gradient(45deg, var(--orb-c), var(--orb-a)); transform: translateZ(-80px); }
+.lab-orb span:nth-child(5) { inset: 17%; border-radius: 50%; background: var(--orb-a); filter: blur(3px); transform: translateZ(130px); box-shadow: 0 0 60px var(--orb-a); }
+.lab-image { transition: transform .8s cubic-bezier(.2,.8,.2,1); }
+.lab-image:hover { transform: scale(1.07) rotate(-1deg); }
+
 .orbit-item:hover .orbit-item-face,
 .orbit-item:focus-visible .orbit-item-face {
   transform: translateZ(55px) rotateY(0) rotateX(0) scale(1.1);
   box-shadow: 0 32px 50px rgb(12 19 30 / 0.28);
 }
 
-.orbit-item-art {
-  position: relative;
-  display: grid;
-  flex: 1;
-  place-items: center;
-}
-
-.orbit-item-art::before {
-  content: "";
-  width: 46%;
-  aspect-ratio: 1;
-  border: 8px solid var(--card-accent);
-  border-radius: 50%;
-  box-shadow: 16px 9px 0 -5px rgb(255 255 255 / 0.22);
-  transform: rotateX(60deg) rotateZ(-25deg);
-}
-
-.orbit-item-art span {
-  position: absolute;
-  width: 35%;
-  height: 2px;
-  background: var(--card-accent);
-  transform: rotate(-32deg) translateY(12px);
-}
-
 .orbit-asterisk { animation: orbit-turn 15s linear infinite; }
-
-.project-browser {
-  transform: perspective(1100px) rotateY(-6deg) rotateX(4deg);
-  transition: transform 600ms cubic-bezier(.2,.8,.2,1), box-shadow 600ms;
-}
-
-.group:hover .project-browser,
-.group:focus-within .project-browser {
-  transform: perspective(1100px) rotateY(5deg) rotateX(-2deg) translateY(-8px) scale(1.03);
-  box-shadow: 0 38px 65px rgb(0 0 0 / 0.25);
-}
 
 @keyframes orbit-float {
   from { transform: translate3d(-50%, -50%, var(--z)) rotateZ(var(--angle)); }
@@ -120,11 +110,11 @@ html { scroll-behavior: smooth; }
 @keyframes orbit-turn { to { transform: rotate(360deg); } }
 
 ::view-transition { background: #17141d; }
-::view-transition-old(root) {
+html.route-transition::view-transition-old(root) {
   z-index: 1;
   animation: portal-close 650ms cubic-bezier(.7,0,.25,1) both;
 }
-::view-transition-new(root) {
+html.route-transition::view-transition-new(root) {
   z-index: 2;
   animation: portal-open 750ms cubic-bezier(.2,.8,.2,1) 200ms both;
 }
@@ -157,7 +147,7 @@ html { scroll-behavior: smooth; }
   }
   .orbit-item { animation: none; transform: translate3d(-50%, -50%, var(--z)) rotateZ(var(--angle)); }
   .orbit-asterisk { animation: none; }
-  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+  html.route-transition::view-transition-old(root), html.route-transition::view-transition-new(root) { animation: none; }
 }
 
 @theme inline {
