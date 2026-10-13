@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type CSSProperties, type PointerEvent } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { PortalLink } from "@/components/RouteTransition";
 import { projects } from "@/lib/projects";
@@ -29,6 +30,8 @@ export default function OrbitalHero() {
   const phaseRef = useRef(0);
   const hoveringCard = useRef(false);
   const [reduced, setReduced] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const heroLineLength = useTransform(scrollYProgress, [0, 0.86], [1, 1]);
 
   useEffect(() => {
     const query = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -50,7 +53,7 @@ export default function OrbitalHero() {
       if (!scene || !visible) return;
       if (previous && !hoveringCard.current) phaseRef.current += Math.min(now - previous, 50) * (Math.PI * 2 / 35000);
       previous = now;
-      const compact = scene.clientWidth < 640;
+      const compact = scene.clientWidth < 1024;
       cards.forEach((card, index) => {
         const { x, y, depth, tilt } = orbitPosition(index, cards.length, phaseRef.current, compact);
         card.style.left = `${x}%`;
@@ -87,6 +90,13 @@ export default function OrbitalHero() {
           <svg className="orbit-scribbles absolute inset-0 h-full w-full" viewBox="0 0 1200 630" fill="none" preserveAspectRatio="none">
             <path d="M318 394C389 392 403 193 471 223C530 249 386 450 498 401" stroke="#328ad2" strokeWidth="5" strokeLinecap="round" />
             <path d="M690 409C771 435 829 376 829 289C829 247 841 239 856 253" stroke="#db7656" strokeWidth="5" strokeLinecap="round" />
+            <motion.path
+              d="M310 430C510 416 689 430 877 417"
+              stroke="var(--color-accent)"
+              strokeWidth="5.5"
+              strokeLinecap="round"
+              style={{ pathLength: heroLineLength }}
+            />
           </svg>
           <span className="orbit-asterisk absolute left-[50%] top-[22%] text-5xl font-black text-[#7a66cf] sm:text-7xl">✳</span>
           <span className="orbit-asterisk absolute left-[38%] top-[72%] text-3xl font-black text-[#7a66cf] sm:text-5xl">✳</span>

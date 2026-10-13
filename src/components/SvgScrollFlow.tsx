@@ -28,17 +28,16 @@ export const SvgScrollFlow = ({ className = "" }: SvgScrollFlowProps) => {
   const { scrollYProgress } = useScroll();
 
   // Start in the hero and finish at the bottom of the page.
-  const pathLength = useTransform(scrollYProgress, [0, 1], [0.1, 1]);
+  const pathLength = useTransform(scrollYProgress, [0, 0.86], [0.1, 1]);
   const strokeDashoffset = useTransform(pathLength, (val) => 1 - val);
 
   // Secondary parallel stroke follows alongside
-  const secondaryPathLength = useTransform(scrollYProgress, [0, 1], [0.08, 1]);
+  const secondaryPathLength = useTransform(scrollYProgress, [0, 0.88], [0.08, 1]);
   const secondaryDashOffset = useTransform(secondaryPathLength, (val) => 1 - val);
 
   // The long continuous path starting from the hero wave (Y=430) and cascading DOWN
   const mainPathD = `
-    M 310, 430
-    C 510, 416, 689, 430, 877, 417
+    M 877, 417
     C 1020, 405, 1140, 470, 1130, 620
     C 1120, 770, 990, 850, 860, 940
     C 730, 1030, 580, 1100, 460, 1190
@@ -52,8 +51,7 @@ export const SvgScrollFlow = ({ className = "" }: SvgScrollFlowProps) => {
   `;
 
   const secondaryPathD = `
-    M 323, 438
-    C 500, 423, 696, 439, 882, 424
+    M 882, 424
     C 1025, 412, 1145, 477, 1135, 627
     C 1125, 777, 995, 857, 865, 947
     C 735, 1037, 585, 1107, 465, 1197
@@ -83,13 +81,13 @@ export const SvgScrollFlow = ({ className = "" }: SvgScrollFlowProps) => {
         >
           <path
             d={mainPathD}
-            stroke="#65a9b3"
+            stroke="var(--color-accent)"
             strokeWidth="5.5"
             strokeLinecap="round"
           />
           <path
             d={secondaryPathD}
-            stroke="#65a9b3"
+            stroke="var(--color-accent)"
             strokeWidth="2.5"
             strokeLinecap="round"
             opacity="0.45"
@@ -116,7 +114,7 @@ export const SvgScrollFlow = ({ className = "" }: SvgScrollFlowProps) => {
         {/* Primary flowing teal stroke going DOWN */}
         <motion.path
           d={mainPathD}
-          stroke="#65a9b3"
+          stroke="var(--color-accent)"
           strokeWidth="5.5"
           strokeLinecap="round"
           style={{
@@ -128,7 +126,7 @@ export const SvgScrollFlow = ({ className = "" }: SvgScrollFlowProps) => {
         {/* Secondary subtle parallel stroke going DOWN */}
         <motion.path
           d={secondaryPathD}
-          stroke="#65a9b3"
+          stroke="var(--color-accent)"
           strokeWidth="2.5"
           strokeLinecap="round"
           opacity="0.45"
