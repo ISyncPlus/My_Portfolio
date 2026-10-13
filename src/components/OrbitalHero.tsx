@@ -15,13 +15,13 @@ const positions = [
   { x: "16%", y: "34%", w: "clamp(105px, 13vw, 180px)", z: "-45px", angle: "8deg" },
 ] as const;
 
-function moveScene(event: PointerEvent<HTMLDivElement>) {
-  if (event.pointerType !== "mouse") return;
+function moveScene(event: PointerEvent<HTMLDivElement>, scene: HTMLDivElement | null) {
+  if (event.pointerType !== "mouse" || !scene) return;
   const bounds = event.currentTarget.getBoundingClientRect();
   const x = (event.clientX - bounds.left) / bounds.width - 0.5;
   const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-  event.currentTarget.style.setProperty("--scene-x", `${(-y * 8).toFixed(2)}deg`);
-  event.currentTarget.style.setProperty("--scene-y", `${(x * 10).toFixed(2)}deg`);
+  scene.style.setProperty("--scene-x", `${(-y * 8).toFixed(2)}deg`);
+  scene.style.setProperty("--scene-y", `${(x * 10).toFixed(2)}deg`);
 }
 
 export default function OrbitalHero() {
@@ -71,10 +71,19 @@ export default function OrbitalHero() {
   }, [reduced]);
 
   return (
-    <div className="relative mx-auto min-h-[600px] max-w-[100rem] px-6 pt-24 sm:px-10 sm:pt-28 lg:min-h-[760px] lg:px-16 xl:px-20">
-      <div ref={sceneRef} className="orbit-scene relative mx-auto h-[clamp(430px,62svh,540px)] w-full max-w-[1350px] sm:h-[630px]" onPointerMove={moveScene} onPointerLeave={event => { event.currentTarget.style.setProperty("--scene-x", "0deg"); event.currentTarget.style.setProperty("--scene-y", "0deg"); }}>
+    <div
+      className="relative mx-auto min-h-[600px] max-w-[100rem] px-6 pt-24 sm:px-10 sm:pt-28 lg:min-h-[760px] lg:px-16 xl:px-20"
+      onPointerMove={event => moveScene(event, sceneRef.current)}
+      onPointerLeave={() => {
+        if (sceneRef.current) {
+          sceneRef.current.style.setProperty("--scene-x", "0deg");
+          sceneRef.current.style.setProperty("--scene-y", "0deg");
+        }
+      }}
+    >
+      <div ref={sceneRef} className="orbit-scene pointer-events-none relative mx-auto h-[clamp(430px,62svh,540px)] w-full max-w-[1350px] sm:h-[630px]">
         <p className="pointer-events-none absolute inset-x-0 top-[5%] z-30 text-center text-[0.65rem] font-bold uppercase tracking-[0.34em] text-accent sm:text-xs">Creative developer<span className="hidden sm:inline"> · UI engineer</span></p>
-        <div className="orbit-stage absolute inset-0" aria-hidden="true">
+        <div className="orbit-stage pointer-events-none absolute inset-0" aria-hidden="true">
           <svg className="orbit-scribbles absolute inset-0 h-full w-full" viewBox="0 0 1200 630" fill="none" preserveAspectRatio="none">
             <path d="M318 394C389 392 403 193 471 223C530 249 386 450 498 401" stroke="#328ad2" strokeWidth="5" strokeLinecap="round" />
             <path d="M690 409C771 435 829 376 829 289C829 247 841 239 856 253" stroke="#db7656" strokeWidth="5" strokeLinecap="round" />
@@ -108,7 +117,6 @@ export default function OrbitalHero() {
       </div>
       <div className="relative z-10 mx-auto flex max-w-[1350px] flex-wrap items-end justify-between gap-4 pb-8 text-[10px] font-bold uppercase tracking-[0.12em] text-foreground/65 sm:text-sm sm:tracking-[0.16em]">
         <p>Design minded. Engineering driven.</p>
-        <a href="#home-intro" className="inline-flex items-center border-b border-foreground/35 pb-2 text-foreground transition-colors hover:border-accent hover:text-accent"><span className="sm:hidden">Explore ↓</span><span className="hidden sm:inline">Scroll to explore ↓</span></a>
       </div>
     </div>
   );

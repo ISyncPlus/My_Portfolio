@@ -5,6 +5,7 @@ import "./globals.css";
 import { Providers } from "@/components/providers";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/sections/Footer";
+import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -123,7 +124,13 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body>
-        <Providers><Navbar />{children}<Footer /></Providers>
+        <Providers>
+          <ProgressiveBlur position="top" height="110px" />
+          <ProgressiveBlur position="bottom" height="100px" className="md:hidden" />
+          <Navbar />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

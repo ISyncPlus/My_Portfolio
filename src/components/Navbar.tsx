@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { ArrowUpRight, Ellipsis, FlaskConical, House, LayoutGrid, Mail, Sparkles, UserRound } from "lucide-react";
 import Logo from "@/components/Logo";
 import { PortalLink } from "@/components/RouteTransition";
-import { ThemeToggleButton } from "@/components/ui/theme/theme-toggle";
+import { ThemeToggleButton } from "@/components/ui/theme-toggle";
 
 const links = [
   ["Home", "/"],
@@ -42,7 +42,7 @@ export default function Navbar() {
         </nav>
         <div className="flex items-center gap-2">
           <PortalLink href="/contact" aria-current={pathname === "/contact" ? "page" : undefined} className="hidden items-center gap-1 rounded-full bg-foreground px-3 py-2.5 text-sm font-bold text-background transition-transform hover:scale-[1.04] md:inline-flex lg:px-4">Let&apos;s talk <ArrowUpRight className="size-4" aria-hidden="true" /></PortalLink>
-          <ThemeToggleButton className="size-11 md:size-9" />
+          <ThemeToggleButton variant="rectangle" start="bottom-up" blur={false} className="size-11 md:size-9" />
         </div>
       </div>
     </header>

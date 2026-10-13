@@ -53,6 +53,7 @@ html { scroll-behavior: smooth; }
 .orbit-item {
   position: absolute;
   z-index: 20;
+  pointer-events: auto;
   left: var(--x);
   top: var(--y);
   width: var(--w);
@@ -98,6 +99,11 @@ html { scroll-behavior: smooth; }
 .lab-image { transition: transform .8s cubic-bezier(.2,.8,.2,1); }
 .lab-image:hover { transform: scale(1.07) rotate(-1deg); }
 
+.orbit-item:hover,
+.orbit-item:focus-visible {
+  z-index: 50 !important;
+}
+
 .orbit-item:hover .orbit-item-face,
 .orbit-item:focus-visible .orbit-item-face {
   transform: translateZ(55px) rotateY(0) rotateX(0) scale(1.1);
@@ -108,24 +114,30 @@ html { scroll-behavior: smooth; }
 
 @keyframes orbit-turn { to { transform: rotate(360deg); } }
 
-::view-transition { background: #17141d; }
+::view-transition { background: var(--background, #16131f); }
+
+html.route-transition::view-transition-group(root) {
+  animation-duration: 800ms;
+}
+
 html.route-transition::view-transition-old(root) {
   z-index: 1;
-  animation: portal-close 650ms cubic-bezier(.7,0,.25,1) both;
+  animation: circle-close 400ms cubic-bezier(0.7, 0, 0.3, 1) both;
 }
+
 html.route-transition::view-transition-new(root) {
   z-index: 2;
-  animation: portal-open 750ms cubic-bezier(.2,.8,.2,1) 200ms both;
+  animation: circle-open 450ms cubic-bezier(0.16, 1, 0.3, 1) 320ms both;
 }
 
-@keyframes portal-close {
-  from { clip-path: circle(150% at 50% 50%); transform: perspective(1300px) rotateY(0) scale(1); }
-  to { clip-path: circle(31% at 50% 50%); transform: perspective(1300px) rotateY(-17deg) rotateX(8deg) scale(.7); }
+@keyframes circle-close {
+  from { clip-path: circle(150% at 50% 50%); }
+  to { clip-path: circle(0% at 50% 50%); }
 }
 
-@keyframes portal-open {
-  from { clip-path: circle(0% at 50% 50%); transform: perspective(1300px) rotateY(18deg) rotateX(-8deg) scale(.72); }
-  to { clip-path: circle(150% at 50% 50%); transform: perspective(1300px) rotateY(0) rotateX(0) scale(1); }
+@keyframes circle-open {
+  from { clip-path: circle(0% at 50% 50%); }
+  to { clip-path: circle(150% at 50% 50%); }
 }
 
 @media (max-width: 639px) {
