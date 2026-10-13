@@ -2,8 +2,6 @@
 
 import { motion } from "framer-motion";
 
-/** Angled skill marquee band — react-bits ScrollVelocity style, hand-rolled. */
-
 const ITEMS = [
   "Websites",
   "Development",
@@ -15,7 +13,7 @@ const ITEMS = [
 ];
 
 const Hex = () => (
-  <svg viewBox="0 0 24 24" className="size-4 shrink-0 text-primary-foreground/60" fill="currentColor" aria-hidden>
+  <svg viewBox="0 0 24 24" className="size-3.5 shrink-0 text-accent/65" fill="currentColor" aria-hidden>
     <path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2z" />
   </svg>
 );
@@ -23,7 +21,7 @@ const Hex = () => (
 const Row = () => (
   <div className="flex shrink-0 items-center gap-8 pr-8">
     {ITEMS.map((item) => (
-      <span key={item} className="flex items-center gap-8 font-heading text-2xl font-extrabold uppercase tracking-wide sm:text-3xl">
+      <span key={item} className="flex items-center gap-8 font-heading text-xl font-extrabold uppercase tracking-wide sm:text-2xl">
         {item}
         <Hex />
       </span>
@@ -33,7 +31,7 @@ const Row = () => (
 
 const Marquee = () => {
   return (
-    <div className="relative z-10 -my-6 -rotate-2 overflow-hidden bg-primary py-5 text-primary-foreground shadow-lg">
+    <div className="relative z-10 overflow-hidden border-y border-foreground/15 bg-background py-5 text-foreground">
       <motion.div
         className="flex w-max"
         animate={{ x: ["0%", "-50%"] }}

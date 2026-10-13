@@ -31,28 +31,122 @@
 
 html { scroll-behavior: smooth; }
 
-.hero-grid {
-  background-image: linear-gradient(to right, rgb(34 30 53 / 0.055) 1px, transparent 1px), linear-gradient(to bottom, rgb(34 30 53 / 0.055) 1px, transparent 1px);
-  background-size: 88px 88px;
-  mask-image: linear-gradient(to right, transparent, black 55%, transparent);
+.orbit-scene {
+  --scene-x: 0deg;
+  --scene-y: 0deg;
+  perspective: 1400px;
+  transform: rotateX(var(--scene-x)) rotateY(var(--scene-y));
+  transform-style: preserve-3d;
+  transition: transform 200ms ease-out;
 }
 
-.dark .hero-grid {
-  background-image: linear-gradient(to right, rgb(242 237 224 / 0.045) 1px, transparent 1px), linear-gradient(to bottom, rgb(242 237 224 / 0.045) 1px, transparent 1px);
+.orbit-item {
+  position: absolute;
+  z-index: 20;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w);
+  aspect-ratio: 4 / 3;
+  transform-style: preserve-3d;
+  animation: orbit-float 7s ease-in-out var(--delay) infinite alternate;
 }
 
-@media (max-width: 1023px) {
-  .hero-mobile-stripes {
-    background-image: repeating-linear-gradient(
-      90deg,
-      transparent 0 18%,
-      rgb(24 94 100 / 0.06) 18% 36%
-    );
-  }
+.orbit-item-face {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 12px;
+  border: 1px solid rgb(255 255 255 / 0.28);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--card-ink);
+  box-shadow: 0 20px 30px rgb(12 19 30 / 0.2);
+  transform: rotateY(-9deg) rotateX(8deg);
+  transition: transform 450ms cubic-bezier(.2,.8,.2,1), box-shadow 450ms;
+}
 
-  .dark .hero-mobile-stripes {
-    background-image: none;
-  }
+.orbit-item:hover .orbit-item-face,
+.orbit-item:focus-visible .orbit-item-face {
+  transform: translateZ(55px) rotateY(0) rotateX(0) scale(1.1);
+  box-shadow: 0 32px 50px rgb(12 19 30 / 0.28);
+}
+
+.orbit-item-art {
+  position: relative;
+  display: grid;
+  flex: 1;
+  place-items: center;
+}
+
+.orbit-item-art::before {
+  content: "";
+  width: 46%;
+  aspect-ratio: 1;
+  border: 8px solid var(--card-accent);
+  border-radius: 50%;
+  box-shadow: 16px 9px 0 -5px rgb(255 255 255 / 0.22);
+  transform: rotateX(60deg) rotateZ(-25deg);
+}
+
+.orbit-item-art span {
+  position: absolute;
+  width: 35%;
+  height: 2px;
+  background: var(--card-accent);
+  transform: rotate(-32deg) translateY(12px);
+}
+
+.orbit-asterisk { animation: orbit-turn 15s linear infinite; }
+
+.project-browser {
+  transform: perspective(1100px) rotateY(-6deg) rotateX(4deg);
+  transition: transform 600ms cubic-bezier(.2,.8,.2,1), box-shadow 600ms;
+}
+
+.group:hover .project-browser,
+.group:focus-within .project-browser {
+  transform: perspective(1100px) rotateY(5deg) rotateX(-2deg) translateY(-8px) scale(1.03);
+  box-shadow: 0 38px 65px rgb(0 0 0 / 0.25);
+}
+
+@keyframes orbit-float {
+  from { transform: translate3d(-50%, -50%, var(--z)) rotateZ(var(--angle)); }
+  to { transform: translate3d(-50%, calc(-50% - 18px), var(--z)) rotateZ(calc(var(--angle) + 3deg)); }
+}
+
+@keyframes orbit-turn { to { transform: rotate(360deg); } }
+
+::view-transition { background: #17141d; }
+::view-transition-old(root) {
+  z-index: 1;
+  animation: portal-close 650ms cubic-bezier(.7,0,.25,1) both;
+}
+::view-transition-new(root) {
+  z-index: 2;
+  animation: portal-open 750ms cubic-bezier(.2,.8,.2,1) 200ms both;
+}
+
+@keyframes portal-close {
+  from { clip-path: circle(150% at 50% 50%); transform: perspective(1300px) rotateY(0) scale(1); }
+  to { clip-path: circle(31% at 50% 50%); transform: perspective(1300px) rotateY(-17deg) rotateX(8deg) scale(.7); }
+}
+
+@keyframes portal-open {
+  from { clip-path: circle(0% at 50% 50%); transform: perspective(1300px) rotateY(18deg) rotateX(-8deg) scale(.72); }
+  to { clip-path: circle(150% at 50% 50%); transform: perspective(1300px) rotateY(0) rotateX(0) scale(1); }
+}
+
+@media (max-width: 639px) {
+  .orbit-item-1 { --x: 15%; --y: 26%; --w: 105px; }
+  .orbit-item-2 { --x: 47%; --y: 16%; --w: 100px; }
+  .orbit-item-3 { --x: 81%; --y: 26%; --w: 105px; }
+  .orbit-item-4 { --x: 82%; --y: 72%; --w: 105px; }
+  .orbit-item-5 { --x: 49%; --y: 83%; --w: 108px; }
+  .orbit-item-6 { --x: 17%; --y: 72%; --w: 105px; }
+  .orbit-scribbles { transform: scale(1.55); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -61,6 +155,9 @@ html { scroll-behavior: smooth; }
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+  .orbit-item { animation: none; transform: translate3d(-50%, -50%, var(--z)) rotateZ(var(--angle)); }
+  .orbit-asterisk { animation: none; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
 }
 
 @theme inline {

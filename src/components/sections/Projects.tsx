@@ -2,7 +2,7 @@
 
 import { ArrowUpRight, Code2 } from "lucide-react";
 
-const projects = [
+export const projects = [
   {
     title: "Lodemark",
     category: "Client website",
@@ -94,7 +94,7 @@ function Preview({ project }: { project: (typeof projects)[number] }) {
     <div className="relative flex h-full w-full items-center justify-center overflow-hidden p-7 sm:p-10" style={{ background: project.backdrop, color: project.ink }}>
       <div className="pointer-events-none absolute -right-12 -top-20 size-[55%] rounded-full border-[2rem] border-current opacity-[0.055]" aria-hidden="true" />
       <div className="pointer-events-none absolute -bottom-36 -left-20 size-[60%] rounded-full border-[3rem] border-current opacity-[0.06]" aria-hidden="true" />
-      <div className="relative flex aspect-[16/10] w-full max-w-[660px] flex-col overflow-hidden rounded-xl border border-current/10 bg-white/[0.07] shadow-[0_28px_50px_rgb(0_0_0_/_0.2)] transition-transform duration-500 group-hover:scale-[1.035] group-hover:-rotate-1">
+      <div className="project-browser relative flex aspect-[16/10] w-full max-w-[660px] flex-col overflow-hidden rounded-xl border border-current/10 bg-white/[0.07] shadow-[0_28px_50px_rgb(0_0_0_/_0.2)]">
         <div className="flex items-center justify-between border-b border-current/15 px-5 py-3 text-[0.55rem] font-bold tracking-[0.18em] sm:px-7 sm:text-[0.65rem]">
           <span className="font-heading text-sm font-black tracking-[-0.05em] sm:text-base">{project.mark}<span style={{ color: project.accent }}>.</span></span>
           <span className="hidden opacity-55 sm:block">OVERVIEW&nbsp;&nbsp;&nbsp; ABOUT&nbsp;&nbsp;&nbsp; CONTACT</span>

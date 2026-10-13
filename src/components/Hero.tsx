@@ -3,47 +3,34 @@ import Image from "next/image";
 
 import portrait from "../../design/my_image.jpg";
 import Navbar from "@/components/Navbar";
+import OrbitalHero from "@/components/OrbitalHero";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden border-b border-foreground/15 bg-background">
+    <section id="home" className="relative overflow-hidden bg-background">
       <Navbar />
-      <div className="pointer-events-none absolute inset-0 hero-grid opacity-50" aria-hidden="true" />
+      <OrbitalHero />
 
-      <div className="relative mx-auto grid min-h-screen w-full max-w-[100rem] items-end gap-14 px-6 pb-12 pt-32 sm:px-10 lg:grid-cols-[minmax(0,1.18fr)_minmax(360px,0.82fr)] lg:gap-12 lg:px-16 lg:pb-16 xl:px-20">
-        <div className="relative z-10 flex flex-col items-start pb-3 lg:pb-6">
-          <p className="mb-8 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-accent sm:text-sm">
-            <span className="size-2.5 rounded-full bg-accent shadow-[0_0_0_5px_rgb(24_94_100_/_0.12)]" />
-            Ebube Ezedimbu · Creative developer
-          </p>
-          <h1 className="max-w-[13ch] font-heading text-[clamp(3.6rem,8vw,8.5rem)] font-black leading-[0.96] tracking-[-0.075em] text-foreground">
-            I build digital <span className="text-accent">things</span> that feel human.
-          </h1>
-          <div className="mt-10 grid w-full gap-8 border-t border-foreground/25 pt-6 sm:grid-cols-[1fr_auto] sm:items-end lg:mt-14">
-            <p className="max-w-lg text-base leading-relaxed text-foreground/70 sm:text-lg">
-              From considered interfaces to useful products, I turn complex ideas into experiences people enjoy using.
-            </p>
-            <a href="#works" className="group inline-flex w-fit items-center gap-3 rounded-full border border-foreground/30 px-5 py-3 text-sm font-bold text-foreground transition-colors hover:border-accent hover:bg-accent hover:text-accent-foreground">
-              Explore my work <ArrowDownRight className="size-4 transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
-            </a>
+      <div className="mx-auto grid max-w-[100rem] items-center gap-9 border-t border-foreground/15 px-6 py-16 sm:px-10 md:grid-cols-[220px_1fr] md:gap-14 lg:px-16 lg:py-24 xl:px-20">
+        <div className="relative mx-auto w-44 md:mx-0 md:w-full">
+          <div className="absolute -inset-3 rounded-[1.75rem] border border-accent/50" aria-hidden="true" />
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[1.35rem] bg-secondary shadow-[0_24px_45px_rgb(19_22_35_/_0.2)]">
+            <Image src={portrait} alt="Ebube Ezedimbu" fill priority placeholder="blur" sizes="(max-width: 767px) 176px, 220px" className="object-cover object-top" />
           </div>
-          <div className="mt-12 flex flex-wrap gap-x-7 gap-y-3 text-xs font-bold uppercase tracking-[0.14em] text-foreground/60">
+        </div>
+        <div className="max-w-5xl">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Lagos, Nigeria · Creative developer</p>
+          <h2 className="mt-5 font-heading text-[clamp(2.4rem,5vw,5.5rem)] font-black leading-[1.04] tracking-[-0.065em] text-foreground">
+            I build digital things <span className="text-accent">that feel human.</span>
+          </h2>
+          <div className="mt-7 flex flex-col gap-7 border-t border-foreground/20 pt-6 sm:flex-row sm:items-end sm:justify-between">
+            <p className="max-w-xl text-base leading-relaxed text-foreground/70 sm:text-lg">From considered interfaces to useful products, I turn complex ideas into experiences people enjoy using.</p>
+            <a href="#works" className="group inline-flex w-fit shrink-0 items-center gap-3 rounded-full border border-foreground/30 px-5 py-3 text-sm font-bold text-foreground transition-colors hover:border-accent hover:bg-accent hover:text-accent-foreground">Explore my work <ArrowDownRight className="size-4 transition-transform group-hover:translate-y-0.5" aria-hidden="true" /></a>
+          </div>
+          <div className="mt-9 flex flex-wrap gap-x-7 gap-y-3 text-xs font-bold uppercase tracking-[0.14em] text-foreground/60">
             <a className="inline-flex items-center gap-1 hover:text-foreground" href="https://github.com/ISyncPlus" target="_blank" rel="noopener noreferrer">GitHub <ArrowUpRight className="size-3.5" /></a>
             <a className="inline-flex items-center gap-1 hover:text-foreground" href="https://www.linkedin.com/in/ebube-ezedimbu/" target="_blank" rel="noopener noreferrer">LinkedIn <ArrowUpRight className="size-3.5" /></a>
             <a className="inline-flex items-center gap-1 hover:text-foreground" href="mailto:eezedimbu@gmail.com">Email <ArrowUpRight className="size-3.5" /></a>
-          </div>
-        </div>
-
-        <div className="relative mx-auto w-full max-w-[580px] lg:mb-2 lg:max-w-none">
-          <div className="absolute -left-5 -top-5 h-[calc(100%-1.25rem)] w-[calc(100%-1.25rem)] rounded-[2rem] border border-accent/45 sm:-left-7 sm:-top-7" aria-hidden="true" />
-          <div className="relative overflow-hidden rounded-[2rem] bg-[#acb9bd] shadow-[0_30px_90px_rgb(18_28_38_/_0.16)]">
-            <div className="relative aspect-[4/5] w-full">
-              <Image src={portrait} alt="Ebube Ezedimbu" fill priority placeholder="blur" sizes="(max-width: 1023px) 100vw, 40vw" className="object-cover object-top" />
-            </div>
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#1c1c2b]/75 to-transparent px-7 pb-7 pt-20 text-white">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/75">Currently based in</p>
-              <p className="mt-1 font-heading text-2xl font-bold">Lagos, Nigeria ↗</p>
-            </div>
           </div>
         </div>
       </div>
