@@ -1,7 +1,7 @@
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
-import portrait from "../../design/my_image.jpg";
+import portrait from "../../design/ebube-portrait.jpg";
 import OrbitalHero from "@/components/OrbitalHero";
 import { PortalLink } from "@/components/RouteTransition";
 

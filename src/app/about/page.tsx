@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import portrait from "../../../design/my_image.jpg";
+import portrait from "../../../design/ebube-portrait.jpg";
 import About from "@/components/sections/About";
 import Experience from "@/components/sections/Experience";
 import Expertise from "@/components/sections/Expertise";

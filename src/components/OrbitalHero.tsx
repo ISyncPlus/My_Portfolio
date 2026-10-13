@@ -1,17 +1,18 @@
 "use client";
 
-import type { CSSProperties, PointerEvent } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type PointerEvent } from "react";
 import Image from "next/image";
 import { PortalLink } from "@/components/RouteTransition";
 import { projects } from "@/lib/projects";
+import { orbitPosition } from "@/lib/orbit";
 
 const positions = [
-  { x: "10%", y: "31%", w: "clamp(105px, 12vw, 170px)", z: "28px", angle: "-11deg", delay: "-0.6s" },
-  { x: "27%", y: "19%", w: "clamp(105px, 11vw, 155px)", z: "-18px", angle: "7deg", delay: "-2.3s" },
-  { x: "67%", y: "20%", w: "clamp(110px, 12vw, 165px)", z: "38px", angle: "-8deg", delay: "-3.4s" },
-  { x: "88%", y: "33%", w: "clamp(105px, 12vw, 175px)", z: "-12px", angle: "9deg", delay: "-1.5s" },
-  { x: "78%", y: "72%", w: "clamp(110px, 13vw, 185px)", z: "40px", angle: "-7deg", delay: "-4.1s" },
-  { x: "21%", y: "73%", w: "clamp(105px, 13vw, 180px)", z: "14px", angle: "8deg", delay: "-2.8s" },
+  { x: "50%", y: "18%", w: "clamp(105px, 12vw, 170px)", z: "-90px", angle: "-11deg" },
+  { x: "84%", y: "34%", w: "clamp(105px, 11vw, 155px)", z: "-45px", angle: "7deg" },
+  { x: "84%", y: "65%", w: "clamp(110px, 12vw, 165px)", z: "45px", angle: "-8deg" },
+  { x: "50%", y: "80%", w: "clamp(105px, 12vw, 175px)", z: "90px", angle: "9deg" },
+  { x: "16%", y: "65%", w: "clamp(110px, 13vw, 185px)", z: "45px", angle: "-7deg" },
+  { x: "16%", y: "34%", w: "clamp(105px, 13vw, 180px)", z: "-45px", angle: "8deg" },
 ] as const;
 
 function moveScene(event: PointerEvent<HTMLDivElement>) {
@@ -24,9 +25,55 @@ function moveScene(event: PointerEvent<HTMLDivElement>) {
 }
 
 export default function OrbitalHero() {
+  const sceneRef = useRef<HTMLDivElement>(null);
+  const phaseRef = useRef(0);
+  const hoveringCard = useRef(false);
+  const [playing, setPlaying] = useState(true);
+  const [reduced, setReduced] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduced(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    const scene = sceneRef.current;
+    if (!scene || !playing || reduced) return;
+    const cards = Array.from(scene.querySelectorAll<HTMLElement>(".orbit-item"));
+    let frame = 0;
+    let previous = 0;
+    let visible = false;
+
+    function animate(now: number) {
+      if (!scene || !visible) return;
+      if (previous && !hoveringCard.current) phaseRef.current += Math.min(now - previous, 50) * (Math.PI * 2 / 35000);
+      previous = now;
+      const compact = scene.clientWidth < 640;
+      cards.forEach((card, index) => {
+        const { x, y, depth, tilt } = orbitPosition(index, cards.length, phaseRef.current, compact);
+        card.style.left = `${x}%`;
+        card.style.top = `${y}%`;
+        card.style.zIndex = String(20 + Math.round((depth + 90) / 9));
+        card.style.transform = `translate3d(-50%, -50%, ${depth}px) rotateY(${tilt}deg) rotateZ(var(--angle))`;
+      });
+      frame = requestAnimationFrame(animate);
+    }
+
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      cancelAnimationFrame(frame);
+      if (visible) { previous = 0; frame = requestAnimationFrame(animate); }
+    });
+    observer.observe(scene);
+    return () => { cancelAnimationFrame(frame); observer.disconnect(); };
+  }, [playing, reduced]);
+
   return (
     <div className="relative mx-auto min-h-[680px] max-w-[100rem] px-6 pt-28 sm:px-10 lg:min-h-[760px] lg:px-16 xl:px-20">
-      <div className="orbit-scene relative mx-auto h-[570px] w-full max-w-[1350px] sm:h-[630px]" onPointerMove={moveScene} onPointerLeave={event => { event.currentTarget.style.setProperty("--scene-x", "0deg"); event.currentTarget.style.setProperty("--scene-y", "0deg"); }}>
+      <div ref={sceneRef} className="orbit-scene relative mx-auto h-[570px] w-full max-w-[1350px] sm:h-[630px]" onPointerMove={moveScene} onPointerLeave={event => { event.currentTarget.style.setProperty("--scene-x", "0deg"); event.currentTarget.style.setProperty("--scene-y", "0deg"); }}>
         <p className="pointer-events-none absolute inset-x-0 top-[5%] z-30 text-center text-[0.65rem] font-bold uppercase tracking-[0.34em] text-accent sm:text-xs">Creative developer<span className="hidden sm:inline"> · UI engineer</span></p>
         <div className="orbit-stage absolute inset-0" aria-hidden="true">
           <svg className="orbit-scribbles absolute inset-0 h-full w-full" viewBox="0 0 1200 630" fill="none" preserveAspectRatio="none">
@@ -48,10 +95,10 @@ export default function OrbitalHero() {
           const position = positions[index];
           const style = {
             "--x": position.x, "--y": position.y, "--w": position.w,
-            "--z": position.z, "--angle": position.angle, "--delay": position.delay,
+            "--z": position.z, "--angle": position.angle,
           } as CSSProperties;
           return (
-            <PortalLink key={project.title} href={`/work/${project.slug}`} aria-label={`Explore ${project.title} case study`} className={`orbit-item orbit-item-${index + 1}`} style={style}>
+            <PortalLink key={project.title} href={`/work/${project.slug}`} aria-label={`Explore ${project.title} case study`} className={`orbit-item orbit-item-${index + 1}`} style={style} onPointerEnter={() => { hoveringCard.current = true; }} onPointerLeave={() => { hoveringCard.current = false; }} onFocus={() => { hoveringCard.current = true; }} onBlur={() => { hoveringCard.current = false; }}>
               <span className="orbit-item-face">
                 <Image src={project.preview} alt="" fill sizes="(max-width: 639px) 110px, 190px" className="object-cover object-center" />
                 <span className="orbit-item-caption"><span>{project.title}</span><span aria-hidden="true">↗</span></span>
@@ -60,8 +107,9 @@ export default function OrbitalHero() {
           );
         })}
       </div>
-      <div className="relative z-10 mx-auto flex max-w-[1350px] items-end justify-between gap-4 pb-8 text-xs font-bold uppercase tracking-[0.16em] text-foreground/65 sm:text-sm">
+      <div className="relative z-10 mx-auto flex max-w-[1350px] flex-wrap items-end justify-between gap-4 pb-8 text-xs font-bold uppercase tracking-[0.16em] text-foreground/65 sm:text-sm">
         <p>Design minded. Engineering driven.</p>
+        <button type="button" disabled={reduced} aria-pressed={!playing} onClick={() => setPlaying(current => !current)} className="border-b border-foreground/35 pb-2 text-foreground transition-colors hover:border-accent hover:text-accent disabled:cursor-default disabled:opacity-50">{reduced ? "Motion off" : playing ? "Pause orbit Ⅱ" : "Play orbit ▶"}</button>
         <a href="#home-intro" className="inline-flex items-center gap-2 border-b border-foreground/35 pb-2 text-foreground transition-colors hover:border-accent hover:text-accent">Scroll to explore <span aria-hidden="true">↓</span></a>
       </div>
     </div>

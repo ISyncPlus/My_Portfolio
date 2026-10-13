@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 import SectionHeading from "@/components/sections/SectionHeading";
 
@@ -23,9 +24,12 @@ const AREAS = [
 ];
 
 const SKILLS = [
-  "HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js",
-  "React Native", "Flutter", "Dart", "Python", "C++", "Express.js", "TanStack Query", "Tailwind CSS", "Git",
-];
+  ["HTML", "html5"], ["CSS", "css3"], ["JavaScript", "javascript"],
+  ["TypeScript", "typescript"], ["React", "react"], ["Next.js", "nextjs"],
+  ["React Native", "reactnative"], ["Flutter", "flutter"], ["Dart", "dart"],
+  ["Python", "python"], ["C++", "cplusplus"], ["Express.js", "express"],
+  ["TanStack Query", "reactquery"], ["Tailwind CSS", "tailwindcss"], ["Git", "git"],
+] as const;
 
 const SkillRow = ({ reverse = false }: { reverse?: boolean }) => (
   <div className="overflow-hidden">
@@ -34,12 +38,13 @@ const SkillRow = ({ reverse = false }: { reverse?: boolean }) => (
       animate={{ x: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
       transition={{ duration: 30, ease: "linear", repeat: Infinity }}
     >
-      {[...SKILLS, ...SKILLS].map((skill, i) => (
+      {[...SKILLS, ...SKILLS].map(([name, icon], i) => (
         <span
-          key={`${skill}-${i}`}
-          className="whitespace-nowrap rounded-full border border-foreground/15 bg-card px-5 py-2.5 text-sm font-semibold text-foreground/80"
+          key={`${name}-${i}`}
+          className="inline-flex items-center gap-2.5 whitespace-nowrap rounded-full border border-foreground/15 bg-card px-5 py-2.5 text-sm font-semibold text-foreground/80"
         >
-          {skill}
+          <Image src={`/tech-logos/${icon}.svg`} alt="" width={22} height={22} className={`size-[22px] object-contain ${icon === "nextjs" || icon === "express" ? "dark:invert" : ""}`} />
+          {name}
         </span>
       ))}
     </motion.div>
