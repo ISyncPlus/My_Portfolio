@@ -16,7 +16,13 @@ const montserrat = Montserrat({
   variable: "--font-display",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ebube-portfolio.vercel.app";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "https://ebube-eze.vercel.app");
 
 export const viewport: Viewport = {
   themeColor: [
@@ -68,10 +74,19 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og-image.png",
+        secureUrl: "https://ebube-eze.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "Ebube Ezedimbu — Creative Developer & UI Engineer Portfolio",
         type: "image/png",
+      },
+      {
+        url: "/og-image.jpg",
+        secureUrl: "https://ebube-eze.vercel.app/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Ebube Ezedimbu — Creative Developer & UI Engineer Portfolio",
+        type: "image/jpeg",
       },
     ],
   },
@@ -125,8 +140,8 @@ export default function RootLayout({
     >
       <body>
         <Providers>
-          <ProgressiveBlur position="top" height="110px" />
-          <ProgressiveBlur position="bottom" height="100px" className="md:hidden" />
+          <ProgressiveBlur position="top" height="110px" backgroundColor="transparent" blurAmount="4px" />
+          <ProgressiveBlur position="bottom" height="100px" backgroundColor="transparent" blurAmount="4px" />
           <Navbar />
           {children}
           <Footer />

@@ -49,6 +49,8 @@ const Skiper4 = () => {
         setGap={setGap}
         setFlexDirection={setFlexDirection}
       />
+
+      <div className="pointer-events-none fixed inset-x-0 bottom-0 z-10 h-32 backdrop-blur-md mask-[linear-gradient(to_top,black,transparent)]" />
     </div>
   );
 };

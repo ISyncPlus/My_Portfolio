@@ -10,7 +10,7 @@ export default function Hero() {
     <section id="home" className="relative overflow-hidden bg-background">
       <OrbitalHero />
 
-      <div id="home-intro" className="mx-auto grid max-w-[100rem] scroll-mt-28 items-center gap-9 border-t border-foreground/15 px-6 py-16 sm:px-10 md:grid-cols-[220px_1fr] md:gap-14 lg:px-16 lg:py-24 xl:px-20">
+      <div id="home-intro" className="relative z-[1] mx-auto grid max-w-[100rem] scroll-mt-28 items-center gap-9 border-t border-foreground/15 px-6 py-16 sm:px-10 md:grid-cols-[220px_1fr] md:gap-14 lg:px-16 lg:py-24 xl:px-20">
         <div className="relative order-2 mx-auto w-56 md:order-1 md:mx-0 md:w-full">
           <div className="absolute -inset-3 rounded-[1.75rem] border border-accent/50" aria-hidden="true" />
           <div className="relative aspect-[4/5] overflow-hidden rounded-[1.35rem] bg-secondary shadow-[0_24px_45px_rgb(19_22_35_/_0.2)]">
