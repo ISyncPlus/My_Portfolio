@@ -7,7 +7,7 @@ interface LogoProps extends React.SVGProps<SVGSVGElement> {
 }
 
 /**
- * Minimalist Hex-E Logo Mark for Ebube Ezedimbu.
+ * Minimalist Hex-E Logo Mark for iSyncPlus.
  * Combines the portfolio's signature hexagonal geometry with the letter 'E',
  * accented by an electric indigo kinetic spark.
  */
@@ -26,7 +26,7 @@ export const Logo = ({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className={className}
-        aria-label="Ebube Ezedimbu Logo"
+        aria-label="iSyncPlus Logo"
         role="img"
         {...props}
       >
@@ -87,7 +87,7 @@ export const Logo = ({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      aria-label="Ebube Ezedimbu Logo"
+      aria-label="iSyncPlus Logo"
       role="img"
       {...props}
     >

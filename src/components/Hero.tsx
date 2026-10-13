@@ -14,7 +14,7 @@ export default function Hero() {
         <div className="relative order-2 mx-auto w-56 md:order-1 md:mx-0 md:w-full">
           <div className="absolute -inset-3 rounded-[1.75rem] border border-accent/50" aria-hidden="true" />
           <div className="relative aspect-[4/5] overflow-hidden rounded-[1.35rem] bg-secondary shadow-[0_24px_45px_rgb(19_22_35_/_0.2)]">
-            <Image src={portrait} alt="Ebube Ezedimbu" fill priority placeholder="blur" sizes="(max-width: 767px) 224px, 220px" className="object-contain object-center" />
+            <Image src={portrait} alt="iSyncPlus" fill priority placeholder="blur" sizes="(max-width: 767px) 224px, 220px" className="object-contain object-center" />
           </div>
         </div>
         <div className="order-1 max-w-5xl md:order-2">

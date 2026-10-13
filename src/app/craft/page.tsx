@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import ParticleField from "@/components/ParticleField";
 import { PortalLink } from "@/components/RouteTransition";
 
-export const metadata: Metadata = { title: "Craft", description: "The technology and decisions behind Ebube Ezedimbu's digital work." };
+export const metadata: Metadata = { title: "Craft", description: "The technology and decisions behind iSyncPlus's digital work." };
 
 const principles = [
   ["01", "Start with the story", "A clear message and considered hierarchy make even a complex product easier to understand. Axiom AI demonstrates this through a modular, conversion-focused narrative."],

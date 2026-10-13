@@ -103,8 +103,8 @@ export default function OrbitalHero() {
         </div>
 
         <div className="orbit-wordmark pointer-events-none absolute inset-x-0 top-[44%] z-30 -translate-y-1/2 text-center">
-          <h1 className="font-heading text-[clamp(3rem,15vw,15rem)] font-black leading-[0.85] tracking-[-0.095em] text-foreground">EBUBE<span className="text-accent">.</span></h1>
-          <p className="mt-4 text-xs font-medium text-foreground/65 sm:text-sm">Ezedimbu · Web, mobile &amp; everything in between</p>
+          <h1 className="whitespace-nowrap font-heading text-[clamp(2.7rem,10vw,10rem)] font-black leading-[0.85] tracking-[-0.095em] text-foreground">iSyncPlus<span className="text-accent">.</span></h1>
+          <p className="mt-4 text-xs font-medium text-foreground/65 sm:text-sm">Web, mobile &amp; everything in between</p>
         </div>
 
         {projects.map((project, index) => {

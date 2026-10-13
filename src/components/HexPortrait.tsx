@@ -71,7 +71,7 @@ const HexPortrait = ({ className = "" }: { className?: string }) => {
     <div
       className={className}
       style={{ width: CLUSTER_W, height: CLUSTER_H }}
-      aria-label="Portrait of Ebube Ezedimbu"
+      aria-label="iSyncPlus portrait"
       role="img"
     >
       <div className="relative" style={{ width: CLUSTER_W, height: CLUSTER_H }}>

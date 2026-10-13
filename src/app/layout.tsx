@@ -37,18 +37,17 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Ebube Ezedimbu — Creative Developer & UI Engineer",
-    template: "%s | Ebube Ezedimbu",
+    default: "iSyncPlus — Creative Developer & UI Engineer",
+    template: "%s | iSyncPlus",
   },
   description:
-    "Ebube Ezedimbu is a creative developer and UI engineer based in Nigeria crafting thoughtful web interfaces, scalable interactive systems, and intuitive digital products.",
-  applicationName: "Ebube Ezedimbu Portfolio",
-  authors: [{ name: "Ebube Ezedimbu", url: "https://github.com/ISyncPlus" }],
-  creator: "Ebube Ezedimbu",
-  publisher: "Ebube Ezedimbu",
+    "iSyncPlus is a creative developer and UI engineer based in Nigeria crafting thoughtful web interfaces, scalable interactive systems, and intuitive digital products.",
+  applicationName: "iSyncPlus Portfolio",
+  authors: [{ name: "iSyncPlus", url: "https://github.com/ISyncPlus" }],
+  creator: "iSyncPlus",
+  publisher: "iSyncPlus",
   keywords: [
-    "Ebube Ezedimbu",
-    "Ebube",
+    "iSyncPlus",
     "Creative Developer",
     "Frontend Engineer",
     "Full-Stack Developer",
@@ -67,8 +66,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "/",
-    siteName: "Ebube Ezedimbu Portfolio",
-    title: "Ebube Ezedimbu — Creative Developer & UI Engineer",
+    siteName: "iSyncPlus Portfolio",
+    title: "iSyncPlus — Creative Developer & UI Engineer",
     description:
       "Creative developer and UI engineer based in Nigeria crafting thoughtful web interfaces, scalable interactive systems, and intuitive digital products.",
     images: [
@@ -77,7 +76,7 @@ export const metadata: Metadata = {
         secureUrl: "https://ebube-eze.vercel.app/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Ebube Ezedimbu — Creative Developer & UI Engineer Portfolio",
+        alt: "iSyncPlus — Creative Developer & UI Engineer Portfolio",
         type: "image/png",
       },
       {
@@ -85,14 +84,14 @@ export const metadata: Metadata = {
         secureUrl: "https://ebube-eze.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Ebube Ezedimbu — Creative Developer & UI Engineer Portfolio",
+        alt: "iSyncPlus — Creative Developer & UI Engineer Portfolio",
         type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ebube Ezedimbu — Creative Developer & UI Engineer",
+    title: "iSyncPlus — Creative Developer & UI Engineer",
     description:
       "Creative developer and UI engineer based in Nigeria crafting thoughtful web interfaces, scalable interactive systems, and intuitive digital products.",
     creator: "@ISyncPlus",
@@ -101,7 +100,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Ebube Ezedimbu — Creative Developer & UI Engineer Portfolio",
+        alt: "iSyncPlus — Creative Developer & UI Engineer Portfolio",
       },
     ],
   },

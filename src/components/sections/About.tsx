@@ -18,7 +18,7 @@ export default function About() {
               Good digital work should look sharp <span className="text-[#9bd7d5]">and make sense.</span>
             </h2>
             <p className="mt-10 max-w-2xl text-lg leading-relaxed text-white/70">
-              I&apos;m Ebube, a developer who brings clarity to complicated ideas. I build useful digital products with a strong eye for the details people actually feel: a clear path through a page, a responsive interaction, and a dependable flow behind the screen.
+              My name is Ebube Ezedimbu. I&apos;m a developer who brings clarity to complicated ideas. I build useful digital products with a strong eye for the details people actually feel: a clear path through a page, a responsive interaction, and a dependable flow behind the screen.
             </p>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">
               My work spans frontend engineering, mobile features, and client websites. I like collaborating closely with designers and product teams to turn a good idea into something people can use.

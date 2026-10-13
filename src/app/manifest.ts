@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Ebube Ezedimbu — Creative Developer",
-    short_name: "Ebube Ezedimbu",
+    name: "iSyncPlus — Creative Developer",
+    short_name: "iSyncPlus",
     description:
       "Creative Developer and UI Engineer based in Nigeria building thoughtful web interfaces and scalable systems.",
     start_url: "/",

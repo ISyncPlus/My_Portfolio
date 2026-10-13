@@ -34,7 +34,7 @@ export default function ContactForm() {
   const field = "w-full rounded-2xl border border-white/20 bg-white/10 px-4 py-3.5 text-base text-white outline-none placeholder:text-white/45 focus:border-[#91cbd0] focus:ring-2 focus:ring-[#91cbd0]/30";
 
   return (
-    <form onSubmit={submit} className="grid gap-5" aria-label="Send Ebube a message">
+    <form onSubmit={submit} className="grid gap-5" aria-label="Send iSyncPlus a message">
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="grid gap-2 text-sm font-semibold text-white/80">
           Your name

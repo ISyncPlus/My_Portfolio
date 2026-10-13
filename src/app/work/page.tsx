@@ -5,7 +5,7 @@ import { PortalLink } from "@/components/RouteTransition";
 
 export const metadata: Metadata = {
   title: "Selected Work",
-  description: "Explore Ebube Ezedimbu's client work, product builds, and frontend experiments.",
+  description: "Explore iSyncPlus's client work, product builds, and frontend experiments.",
 };
 
 export default function WorkPage() {
