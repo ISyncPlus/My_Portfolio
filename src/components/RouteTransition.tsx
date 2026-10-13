@@ -29,6 +29,7 @@ export function RouteTransitionProvider({ children }: { children: React.ReactNod
       return;
     }
 
+    document.getElementById("theme-transition-styles")?.remove();
     document.documentElement.classList.add("route-transition");
     const transition = document.startViewTransition(() => new Promise<void>(resolve => {
       const timer = window.setTimeout(() => {

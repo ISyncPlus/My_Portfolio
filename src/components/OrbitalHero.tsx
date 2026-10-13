@@ -2,7 +2,9 @@
 
 import { useEffect, useRef, useState, type CSSProperties, type PointerEvent } from "react";
 import Image from "next/image";
+import { useScroll } from "framer-motion";
 import { PortalLink } from "@/components/RouteTransition";
+import { SvgScrollFlow } from "@/components/SvgScrollFlow";
 import { projects } from "@/lib/projects";
 import { orbitPosition } from "@/lib/orbit";
 
@@ -25,10 +27,16 @@ function moveScene(event: PointerEvent<HTMLDivElement>, scene: HTMLDivElement | 
 }
 
 export default function OrbitalHero() {
+  const heroRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<HTMLDivElement>(null);
   const phaseRef = useRef(0);
   const hoveringCard = useRef(false);
   const [reduced, setReduced] = useState(false);
+
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
 
   useEffect(() => {
     const query = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -72,6 +80,7 @@ export default function OrbitalHero() {
 
   return (
     <div
+      ref={heroRef}
       className="relative mx-auto min-h-[600px] max-w-[100rem] px-6 pt-24 sm:px-10 sm:pt-28 lg:min-h-[760px] lg:px-16 xl:px-20"
       onPointerMove={event => moveScene(event, sceneRef.current)}
       onPointerLeave={() => {
@@ -84,12 +93,7 @@ export default function OrbitalHero() {
       <div ref={sceneRef} className="orbit-scene pointer-events-none relative mx-auto h-[clamp(430px,62svh,540px)] w-full max-w-[1350px] sm:h-[630px]">
         <p className="pointer-events-none absolute inset-x-0 top-[5%] z-30 text-center text-[0.65rem] font-bold uppercase tracking-[0.34em] text-accent sm:text-xs">Creative developer<span className="hidden sm:inline"> · UI engineer</span></p>
         <div className="orbit-stage pointer-events-none absolute inset-0" aria-hidden="true">
-          <svg className="orbit-scribbles absolute inset-0 h-full w-full" viewBox="0 0 1200 630" fill="none" preserveAspectRatio="none">
-            <path d="M318 394C389 392 403 193 471 223C530 249 386 450 498 401" stroke="#328ad2" strokeWidth="5" strokeLinecap="round" />
-            <path d="M690 409C771 435 829 376 829 289C829 247 841 239 856 253" stroke="#db7656" strokeWidth="5" strokeLinecap="round" />
-            <path d="M310 430C510 416 689 430 877 417" stroke="#65a9b3" strokeWidth="6" strokeLinecap="round" />
-            <path d="M323 438C500 423 696 439 882 424" stroke="#65a9b3" strokeWidth="2" strokeLinecap="round" opacity=".55" />
-          </svg>
+          <SvgScrollFlow scrollYProgress={scrollYProgress} reducedMotion={reduced} />
           <span className="orbit-asterisk absolute left-[50%] top-[22%] text-5xl font-black text-[#7a66cf] sm:text-7xl">✳</span>
           <span className="orbit-asterisk absolute left-[38%] top-[72%] text-3xl font-black text-[#7a66cf] sm:text-5xl">✳</span>
         </div>
