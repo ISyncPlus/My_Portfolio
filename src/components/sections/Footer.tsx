@@ -10,7 +10,7 @@ const links = [
 export default function Footer() {
   return (
     <footer className="bg-[#17151f] text-[#edf3f5]">
-      <div className="mx-auto max-w-[100rem] px-6 pb-8 pt-24 sm:px-10 lg:px-16 lg:pt-32 xl:px-20">
+      <div className="mx-auto max-w-[100rem] px-6 pb-32 pt-24 sm:px-10 md:pb-8 lg:px-16 lg:pt-32 xl:px-20">
         <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#9bd7d5]">Have something in mind?</p>
         <div className="mt-5 flex flex-wrap items-end justify-between gap-8 border-b border-white/20 pb-16">
           <h2 className="max-w-4xl font-heading text-[clamp(3.4rem,8vw,8rem)] font-black leading-[0.98] tracking-[-0.07em]">Let&apos;s make it <span className="text-[#9bd7d5]">matter.</span></h2>

@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <main className="bg-background pb-32 pt-40 text-foreground sm:pt-44">
+    <main className="bg-background pb-24 pt-28 text-foreground md:pb-32 md:pt-44">
       <div className="mx-auto max-w-[100rem] px-6 sm:px-10 lg:px-16 xl:px-20">
         <header className="mx-auto max-w-5xl pb-20 text-center sm:pb-24">
           <p className="text-xs font-bold uppercase tracking-[0.24em] text-accent">Archive / 01—06</p>
-          <h1 className="relative mt-4 font-heading text-[clamp(4.7rem,12vw,11rem)] font-black leading-[0.9] tracking-[-0.095em]">Selected<br className="sm:hidden" /> work<span className="text-accent">.</span></h1>
+          <h1 className="relative mt-4 font-heading text-[clamp(3.8rem,12vw,11rem)] font-black leading-[0.9] tracking-[-0.095em]">Selected<br className="sm:hidden" /> work<span className="text-accent">.</span></h1>
           <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-foreground/65 sm:text-xl">Six projects, from a client website and graph-powered tooling to product-facing frontend concepts. Open a case study to see the thinking and the build.</p>
         </header>
         <Projects />

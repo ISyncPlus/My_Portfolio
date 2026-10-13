@@ -28,7 +28,6 @@ export default function OrbitalHero() {
   const sceneRef = useRef<HTMLDivElement>(null);
   const phaseRef = useRef(0);
   const hoveringCard = useRef(false);
-  const [playing, setPlaying] = useState(true);
   const [reduced, setReduced] = useState(false);
 
   useEffect(() => {
@@ -41,7 +40,7 @@ export default function OrbitalHero() {
 
   useEffect(() => {
     const scene = sceneRef.current;
-    if (!scene || !playing || reduced) return;
+    if (!scene || reduced) return;
     const cards = Array.from(scene.querySelectorAll<HTMLElement>(".orbit-item"));
     let frame = 0;
     let previous = 0;
@@ -69,11 +68,11 @@ export default function OrbitalHero() {
     });
     observer.observe(scene);
     return () => { cancelAnimationFrame(frame); observer.disconnect(); };
-  }, [playing, reduced]);
+  }, [reduced]);
 
   return (
-    <div className="relative mx-auto min-h-[680px] max-w-[100rem] px-6 pt-28 sm:px-10 lg:min-h-[760px] lg:px-16 xl:px-20">
-      <div ref={sceneRef} className="orbit-scene relative mx-auto h-[570px] w-full max-w-[1350px] sm:h-[630px]" onPointerMove={moveScene} onPointerLeave={event => { event.currentTarget.style.setProperty("--scene-x", "0deg"); event.currentTarget.style.setProperty("--scene-y", "0deg"); }}>
+    <div className="relative mx-auto min-h-[600px] max-w-[100rem] px-6 pt-24 sm:px-10 sm:pt-28 lg:min-h-[760px] lg:px-16 xl:px-20">
+      <div ref={sceneRef} className="orbit-scene relative mx-auto h-[clamp(430px,62svh,540px)] w-full max-w-[1350px] sm:h-[630px]" onPointerMove={moveScene} onPointerLeave={event => { event.currentTarget.style.setProperty("--scene-x", "0deg"); event.currentTarget.style.setProperty("--scene-y", "0deg"); }}>
         <p className="pointer-events-none absolute inset-x-0 top-[5%] z-30 text-center text-[0.65rem] font-bold uppercase tracking-[0.34em] text-accent sm:text-xs">Creative developer<span className="hidden sm:inline"> · UI engineer</span></p>
         <div className="orbit-stage absolute inset-0" aria-hidden="true">
           <svg className="orbit-scribbles absolute inset-0 h-full w-full" viewBox="0 0 1200 630" fill="none" preserveAspectRatio="none">
@@ -87,7 +86,7 @@ export default function OrbitalHero() {
         </div>
 
         <div className="orbit-wordmark pointer-events-none absolute inset-x-0 top-[44%] z-30 -translate-y-1/2 text-center">
-          <h1 className="font-heading text-[clamp(5.5rem,17vw,15rem)] font-black leading-[0.85] tracking-[-0.095em] text-foreground">EBUBE<span className="text-accent">.</span></h1>
+          <h1 className="font-heading text-[clamp(3.55rem,17vw,15rem)] font-black leading-[0.85] tracking-[-0.095em] text-foreground">EBUBE<span className="text-accent">.</span></h1>
           <p className="mt-4 text-xs font-medium text-foreground/65 sm:text-sm">Ezedimbu · Web, mobile &amp; everything in between</p>
         </div>
 
@@ -107,10 +106,9 @@ export default function OrbitalHero() {
           );
         })}
       </div>
-      <div className="relative z-10 mx-auto flex max-w-[1350px] flex-wrap items-end justify-between gap-4 pb-8 text-xs font-bold uppercase tracking-[0.16em] text-foreground/65 sm:text-sm">
+      <div className="relative z-10 mx-auto flex max-w-[1350px] flex-wrap items-end justify-between gap-4 pb-8 text-[10px] font-bold uppercase tracking-[0.12em] text-foreground/65 sm:text-sm sm:tracking-[0.16em]">
         <p>Design minded. Engineering driven.</p>
-        <button type="button" disabled={reduced} aria-pressed={!playing} onClick={() => setPlaying(current => !current)} className="border-b border-foreground/35 pb-2 text-foreground transition-colors hover:border-accent hover:text-accent disabled:cursor-default disabled:opacity-50">{reduced ? "Motion off" : playing ? "Pause orbit Ⅱ" : "Play orbit ▶"}</button>
-        <a href="#home-intro" className="inline-flex items-center gap-2 border-b border-foreground/35 pb-2 text-foreground transition-colors hover:border-accent hover:text-accent">Scroll to explore <span aria-hidden="true">↓</span></a>
+        <a href="#home-intro" className="inline-flex items-center border-b border-foreground/35 pb-2 text-foreground transition-colors hover:border-accent hover:text-accent"><span className="sm:hidden">Explore ↓</span><span className="hidden sm:inline">Scroll to explore ↓</span></a>
       </div>
     </div>
   );

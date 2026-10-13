@@ -26,11 +26,11 @@ export default async function ProjectPage({ params }: Props) {
   const next = projects[(index + 1) % projects.length];
 
   return (
-    <main className="bg-background pb-28 pt-36 text-foreground sm:pt-44">
+    <main className="bg-background pb-20 pt-28 text-foreground md:pb-28 md:pt-44">
       <article className="mx-auto max-w-[100rem] px-6 sm:px-10 lg:px-16 xl:px-20">
         <PortalLink href="/work" className="inline-flex items-center gap-2 text-sm font-bold text-foreground/60 transition-colors hover:text-foreground"><ArrowLeft className="size-4" /> All projects</PortalLink>
         <div className="mt-12 grid gap-8 border-t border-foreground/20 pt-8 lg:grid-cols-[1fr_17rem] lg:items-end">
-          <div><p className="text-xs font-bold uppercase tracking-[0.22em] text-accent">0{index + 1} / {project.category}</p><h1 className="mt-4 font-heading text-[clamp(3.8rem,8vw,9rem)] font-black leading-[0.95] tracking-[-0.075em]">{project.title}<span className="text-accent">.</span></h1><p className="mt-7 max-w-3xl text-xl leading-relaxed text-foreground/70 sm:text-2xl">{project.description}</p></div>
+          <div><p className="text-xs font-bold uppercase tracking-[0.22em] text-accent">0{index + 1} / {project.category}</p><h1 className="mt-4 font-heading text-[clamp(3rem,8vw,9rem)] font-black leading-[0.95] tracking-[-0.075em]">{project.title}<span className="text-accent">.</span></h1><p className="mt-7 max-w-3xl text-xl leading-relaxed text-foreground/70 sm:text-2xl">{project.description}</p></div>
           <div className="border-t border-foreground/20 pt-4 text-sm lg:border-0 lg:pt-0"><p className="text-xs font-bold uppercase tracking-[0.17em] text-accent">Scope</p><p className="mt-2 font-semibold">{project.role}</p><p className="mt-5 text-xs font-bold uppercase tracking-[0.17em] text-accent">Built with</p><p className="mt-2 leading-relaxed text-foreground/70">{project.tags.join(" · ")}</p></div>
         </div>
 

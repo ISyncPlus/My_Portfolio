@@ -11,13 +11,13 @@ export default function Hero() {
       <OrbitalHero />
 
       <div id="home-intro" className="mx-auto grid max-w-[100rem] scroll-mt-28 items-center gap-9 border-t border-foreground/15 px-6 py-16 sm:px-10 md:grid-cols-[220px_1fr] md:gap-14 lg:px-16 lg:py-24 xl:px-20">
-        <div className="relative mx-auto w-44 md:mx-0 md:w-full">
+        <div className="relative order-2 mx-auto w-56 md:order-1 md:mx-0 md:w-full">
           <div className="absolute -inset-3 rounded-[1.75rem] border border-accent/50" aria-hidden="true" />
           <div className="relative aspect-[4/5] overflow-hidden rounded-[1.35rem] bg-secondary shadow-[0_24px_45px_rgb(19_22_35_/_0.2)]">
-            <Image src={portrait} alt="Ebube Ezedimbu" fill priority placeholder="blur" sizes="(max-width: 767px) 176px, 220px" className="object-contain object-center" />
+            <Image src={portrait} alt="Ebube Ezedimbu" fill priority placeholder="blur" sizes="(max-width: 767px) 224px, 220px" className="object-contain object-center" />
           </div>
         </div>
-        <div className="max-w-5xl">
+        <div className="order-1 max-w-5xl md:order-2">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Lagos, Nigeria · Creative developer</p>
           <h2 className="mt-5 font-heading text-[clamp(2.4rem,5vw,5.5rem)] font-black leading-[1.04] tracking-[-0.065em] text-foreground">
             I build digital things <span className="text-accent">that feel human.</span>

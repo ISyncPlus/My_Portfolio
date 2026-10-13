@@ -31,6 +31,10 @@
 
 html { scroll-behavior: smooth; }
 
+@media (max-width: 767px) {
+  html { scroll-padding-bottom: 7rem; }
+}
+
 .page-shell { width: 100%; max-width: 100rem; margin-inline: auto; padding-inline: clamp(1.5rem, 5vw, 5rem); }
 .page-display { font-family: var(--font-display), sans-serif; font-size: clamp(3.4rem, 7.5vw, 8.5rem); font-weight: 900; line-height: .98; letter-spacing: -.075em; }
 .eyebrow { font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .2em; }
@@ -84,7 +88,7 @@ html { scroll-behavior: smooth; }
 
 .lab-object-stage { background: radial-gradient(circle at 50% 45%, #2e4259, #111321 63%); perspective: 1000px; cursor: grab; }
 .lab-object-stage:active { cursor: grabbing; }
-.lab-orb { position: relative; width: min(42vw, 300px); height: min(42vw, 300px); transform-style: preserve-3d; transition: transform .15s ease-out; }
+.lab-orb { position: relative; width: min(62vw, 260px); height: min(62vw, 260px); transform-style: preserve-3d; transition: transform .15s ease-out; }
 .lab-orb span { position: absolute; inset: 0; border-radius: 20%; border: 1px solid rgb(255 255 255 / .65); box-shadow: inset 0 0 45px rgb(255 255 255 / .25), 0 25px 60px rgb(0 0 0 / .3); transform-style: preserve-3d; backdrop-filter: blur(5px); }
 .lab-orb span:nth-child(1) { background: linear-gradient(135deg, var(--orb-a), var(--orb-b)); transform: translateZ(80px); }
 .lab-orb span:nth-child(2) { background: color-mix(in srgb, var(--orb-b), transparent 35%); transform: rotateY(90deg) translateZ(80px); }
@@ -125,13 +129,22 @@ html.route-transition::view-transition-new(root) {
 }
 
 @media (max-width: 639px) {
-  .orbit-item-1 { --x: 50%; --y: 15%; --w: 105px; }
-  .orbit-item-2 { --x: 79%; --y: 32%; --w: 100px; }
-  .orbit-item-3 { --x: 79%; --y: 66%; --w: 105px; }
-  .orbit-item-4 { --x: 50%; --y: 83%; --w: 105px; }
-  .orbit-item-5 { --x: 21%; --y: 66%; --w: 108px; }
-  .orbit-item-6 { --x: 21%; --y: 32%; --w: 105px; }
+  .orbit-item-1 { left: 50%; top: 15%; width: 105px; }
+  .orbit-item-2 { left: 79%; top: 32%; width: 100px; }
+  .orbit-item-3 { left: 79%; top: 66%; width: 105px; }
+  .orbit-item-4 { left: 50%; top: 83%; width: 105px; }
+  .orbit-item-5 { left: 21%; top: 66%; width: 108px; }
+  .orbit-item-6 { left: 21%; top: 32%; width: 105px; }
   .orbit-scribbles { transform: scale(1.55); }
+}
+
+@media (min-width: 640px) {
+  .lab-orb { width: min(42vw, 300px); height: min(42vw, 300px); }
+}
+
+@media (max-width: 380px) {
+  .page-display { font-size: clamp(2.8rem, 12vw, 3.4rem); }
+  .orbit-item { width: 88px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
