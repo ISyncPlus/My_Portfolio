@@ -141,7 +141,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <ProgressiveBlur position="top" height="110px" backgroundColor="transparent" blurAmount="4px" />
-          <ProgressiveBlur position="bottom" height="100px" backgroundColor="transparent" blurAmount="4px" />
+          <ProgressiveBlur position="bottom" height="64px" backgroundColor="transparent" blurAmount="2px" />
           <Navbar />
           {children}
           <Footer />

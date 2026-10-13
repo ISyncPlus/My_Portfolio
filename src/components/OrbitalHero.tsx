@@ -84,7 +84,7 @@ export default function OrbitalHero() {
         }
       }}
     >
-      <div ref={sceneRef} className="orbit-scene pointer-events-none relative mx-auto h-[clamp(430px,62svh,540px)] w-full max-w-[1350px] sm:h-[630px]">
+      <div ref={sceneRef} className="orbit-scene pointer-events-none relative mx-auto h-[clamp(540px,78svh,680px)] w-full max-w-[1350px] sm:h-[630px]">
         <p className="pointer-events-none absolute inset-x-0 top-[5%] z-30 text-center text-[0.65rem] font-bold uppercase tracking-[0.34em] text-accent sm:text-xs">Creative developer<span className="hidden sm:inline"> · UI engineer</span></p>
         <div className="orbit-stage pointer-events-none absolute inset-0" aria-hidden="true">
           <svg className="orbit-scribbles absolute inset-0 h-full w-full" viewBox="0 0 1200 630" fill="none" preserveAspectRatio="none">
@@ -103,7 +103,7 @@ export default function OrbitalHero() {
         </div>
 
         <div className="orbit-wordmark pointer-events-none absolute inset-x-0 top-[44%] z-30 -translate-y-1/2 text-center">
-          <h1 className="font-heading text-[clamp(3.55rem,17vw,15rem)] font-black leading-[0.85] tracking-[-0.095em] text-foreground">EBUBE<span className="text-accent">.</span></h1>
+          <h1 className="font-heading text-[clamp(3rem,15vw,15rem)] font-black leading-[0.85] tracking-[-0.095em] text-foreground">EBUBE<span className="text-accent">.</span></h1>
           <p className="mt-4 text-xs font-medium text-foreground/65 sm:text-sm">Ezedimbu · Web, mobile &amp; everything in between</p>
         </div>
 

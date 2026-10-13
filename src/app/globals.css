@@ -153,7 +153,8 @@ html.route-transition::view-transition-new(root) {
   .orbit-item-4 { left: 50%; top: 83%; width: 105px; }
   .orbit-item-5 { left: 21%; top: 66%; width: 108px; }
   .orbit-item-6 { left: 21%; top: 32%; width: 105px; }
-  .orbit-scribbles { transform: scale(1.55); }
+  .orbit-scribbles,
+  .orbit-asterisk { display: none; }
 }
 
 @media (min-width: 640px) {
