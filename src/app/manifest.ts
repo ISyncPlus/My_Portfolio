@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
       "Creative Developer and UI Engineer based in Nigeria building thoughtful web interfaces and scalable systems.",
     start_url: "/",
     display: "standalone",
-    background_color: "#16131f",
+    background_color: "#101819",
     theme_color: "#d8e1e7",
     icons: [
       {

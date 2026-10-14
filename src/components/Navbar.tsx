@@ -32,7 +32,7 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-3 z-50 px-4 md:top-5 md:px-6">
       <div className="mx-auto flex max-w-[1450px] items-center justify-between gap-x-4 rounded-full border border-foreground/10 bg-card/90 px-4 py-2.5 shadow-[0_16px_40px_rgb(25_28_44_/_0.1)] backdrop-blur-xl md:px-5 md:py-3">
         <PortalLink href="/" aria-label="iSyncPlus, home" className="flex shrink-0 items-center gap-2.5 font-heading text-base font-black tracking-tight text-foreground">
-          <Logo size={24} className="text-accent" /> iSyncPlus<span className="text-accent">.</span>
+          <Logo size={32} className="text-foreground" /> <span className="font-sans text-lg font-bold tracking-[-0.045em]">iSyncPlus</span>
         </PortalLink>
         <nav aria-label="Main navigation" className="hidden items-center gap-1 text-sm font-semibold text-foreground/80 md:flex">
           {links.map(([label, href]) => {
@@ -47,16 +47,16 @@ export default function Navbar() {
       </div>
     </header>
     {moreOpen && <button type="button" aria-label="Close more navigation" className="fixed inset-0 z-[55] bg-black/10 md:hidden" onClick={() => setMoreOpen(false)} />}
-    <nav aria-label="Mobile navigation" onKeyDown={event => { if (event.key === "Escape" && moreOpen) { setMoreOpen(false); moreButton.current?.focus(); } }} className="fixed inset-x-3 bottom-[calc(0.75rem+env(safe-area-inset-bottom))] z-[60] mx-auto grid max-w-[430px] grid-cols-5 rounded-[1.6rem] border border-white/15 bg-[#15141d]/95 p-1.5 text-white shadow-[0_20px_55px_rgb(0_0_0_/_0.36)] backdrop-blur-xl md:hidden">
-      <div id="mobile-more" className={`absolute bottom-full right-0 mb-3 min-w-48 gap-1 rounded-2xl border border-white/15 bg-[#15141d]/95 p-2 shadow-[0_18px_40px_rgb(0_0_0_/_0.3)] backdrop-blur-xl ${moreOpen ? "grid" : "hidden"}`}>
-        <PortalLink href="/craft" onClick={() => setMoreOpen(false)} aria-current={pathname === "/craft" ? "page" : undefined} className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold hover:bg-white/10"><Sparkles className="size-5 text-[#9bd7d5]" /> Craft</PortalLink>
-        <PortalLink href="/lab" onClick={() => setMoreOpen(false)} aria-current={pathname === "/lab" ? "page" : undefined} className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold hover:bg-white/10"><FlaskConical className="size-5 text-[#9bd7d5]" /> Lab</PortalLink>
+    <nav aria-label="Mobile navigation" onKeyDown={event => { if (event.key === "Escape" && moreOpen) { setMoreOpen(false); moreButton.current?.focus(); } }} className="fixed inset-x-3 bottom-[calc(0.75rem+env(safe-area-inset-bottom))] z-[60] mx-auto grid max-w-[430px] grid-cols-5 rounded-[1.6rem] border border-white/15 bg-[#101819]/95 p-1.5 text-white shadow-[0_20px_55px_rgb(0_0_0_/_0.36)] backdrop-blur-xl md:hidden">
+      <div id="mobile-more" className={`absolute bottom-full right-0 mb-3 min-w-48 gap-1 rounded-2xl border border-white/15 bg-[#101819]/95 p-2 shadow-[0_18px_40px_rgb(0_0_0_/_0.3)] backdrop-blur-xl ${moreOpen ? "grid" : "hidden"}`}>
+        <PortalLink href="/craft" onClick={() => setMoreOpen(false)} aria-current={pathname === "/craft" ? "page" : undefined} className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold hover:bg-white/10"><Sparkles className="size-5 text-[#91c9ba]" /> Craft</PortalLink>
+        <PortalLink href="/lab" onClick={() => setMoreOpen(false)} aria-current={pathname === "/lab" ? "page" : undefined} className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold hover:bg-white/10"><FlaskConical className="size-5 text-[#91c9ba]" /> Lab</PortalLink>
       </div>
       {mobileLinks.map(({ label, href, icon: Icon }) => {
         const active = pathname === href || (href === "/work" && pathname.startsWith("/work/"));
-        return <PortalLink key={href} href={href} onClick={() => setMoreOpen(false)} aria-current={active ? "page" : undefined} className={`flex min-h-15 flex-col items-center justify-center gap-1 rounded-[1.1rem] text-[10px] font-semibold tracking-wide transition-colors ${active ? "bg-white/10 text-[#9bd7d5]" : "text-white/70 hover:text-white"}`}><Icon className="size-5" strokeWidth={active ? 2.4 : 1.8} aria-hidden="true" /><span>{label}</span></PortalLink>;
+        return <PortalLink key={href} href={href} onClick={() => setMoreOpen(false)} aria-current={active ? "page" : undefined} className={`flex min-h-15 flex-col items-center justify-center gap-1 rounded-[1.1rem] text-[10px] font-semibold tracking-wide transition-colors ${active ? "bg-white/10 text-[#91c9ba]" : "text-white/70 hover:text-white"}`}><Icon className="size-5" strokeWidth={active ? 2.4 : 1.8} aria-hidden="true" /><span>{label}</span></PortalLink>;
       })}
-      <button ref={moreButton} type="button" aria-controls="mobile-more" aria-expanded={moreOpen} aria-current={moreActive ? "page" : undefined} onClick={() => setMoreOpen(current => !current)} className={`flex min-h-15 flex-col items-center justify-center gap-1 rounded-[1.1rem] text-[10px] font-semibold tracking-wide transition-colors ${moreOpen || moreActive ? "bg-white/10 text-[#9bd7d5]" : "text-white/70 hover:text-white"}`}><Ellipsis className="size-5" strokeWidth={moreOpen || moreActive ? 2.4 : 1.8} aria-hidden="true" /><span>More</span></button>
+      <button ref={moreButton} type="button" aria-controls="mobile-more" aria-expanded={moreOpen} aria-current={moreActive ? "page" : undefined} onClick={() => setMoreOpen(current => !current)} className={`flex min-h-15 flex-col items-center justify-center gap-1 rounded-[1.1rem] text-[10px] font-semibold tracking-wide transition-colors ${moreOpen || moreActive ? "bg-white/10 text-[#91c9ba]" : "text-white/70 hover:text-white"}`}><Ellipsis className="size-5" strokeWidth={moreOpen || moreActive ? 2.4 : 1.8} aria-hidden="true" /><span>More</span></button>
     </nav>
     </>
   );

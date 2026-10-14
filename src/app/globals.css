@@ -87,7 +87,7 @@ html { scroll-behavior: smooth; }
 .group:hover .project-frame, .group:focus-within .project-frame { transform: perspective(1200px) rotateY(2deg) rotateX(-2deg) translateY(-7px); box-shadow: 0 40px 70px rgb(16 25 38 / .25); }
 .group:hover .project-frame-image, .group:focus-within .project-frame-image { transform: scale(1.055); }
 
-.lab-object-stage { background: radial-gradient(circle at 50% 45%, #2e4259, #111321 63%); perspective: 1000px; cursor: grab; }
+.lab-object-stage { background: radial-gradient(circle at 50% 45%, #2a5553, #101819 63%); perspective: 1000px; cursor: grab; }
 .lab-object-stage:active { cursor: grabbing; }
 .lab-orb { position: relative; width: min(62vw, 260px); height: min(62vw, 260px); transform-style: preserve-3d; transition: transform .15s ease-out; }
 .lab-orb span { position: absolute; inset: 0; border-radius: 20%; border: 1px solid rgb(255 255 255 / .65); box-shadow: inset 0 0 45px rgb(255 255 255 / .25), 0 25px 60px rgb(0 0 0 / .3); transform-style: preserve-3d; backdrop-filter: blur(5px); }
@@ -114,7 +114,7 @@ html { scroll-behavior: smooth; }
 
 @keyframes orbit-turn { to { transform: rotate(360deg); } }
 
-::view-transition { background: #100f19; }
+::view-transition { background: #101819; }
 
 html.route-transition::view-transition-group(root) {
   animation-duration: 1220ms;
@@ -223,23 +223,23 @@ html.route-transition::view-transition-new(root) {
 :root {
   --expo-out: cubic-bezier(0.16, 1, 0.3, 1);
   --background: #d8e1e7;
-  --foreground: #221e35;
+  --foreground: #202d30;
   --card: #edf3f5;
-  --card-foreground: #221e35;
+  --card-foreground: #202d30;
   --popover: #edf3f5;
-  --popover-foreground: #221e35;
-  --primary: #221e35;
+  --popover-foreground: #202d30;
+  --primary: #202d30;
   --primary-foreground: #edf3f5;
   --secondary: #c8d6de;
-  --secondary-foreground: #221e35;
+  --secondary-foreground: #202d30;
   --muted: #cbd7de;
-  --muted-foreground: #4d4768;
+  --muted-foreground: #4a5d62;
   --accent: #185e64;
   --accent-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: rgb(34 30 53 / 0.15);
-  --input: rgb(34 30 53 / 0.15);
-  --ring: #221e35;
+  --border: rgb(32 45 48 / 0.15);
+  --input: rgb(32 45 48 / 0.15);
+  --ring: #185e64;
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -257,24 +257,24 @@ html.route-transition::view-transition-new(root) {
 }
 
 .dark {
-  --background: #16131f;
-  --foreground: #f2ede0;
-  --card: #221e35;
-  --card-foreground: #f2ede0;
-  --popover: #221e35;
-  --popover-foreground: #f2ede0;
-  --primary: #c5baff;
-  --primary-foreground: #221e35;
-  --secondary: #2a2542;
-  --secondary-foreground: #f2ede0;
-  --muted: #2a2542;
-  --muted-foreground: #a49dc0;
-  --accent: #8b7cf7;
-  --accent-foreground: #ffffff;
+  --background: #101819;
+  --foreground: #edf3f2;
+  --card: #182326;
+  --card-foreground: #edf3f2;
+  --popover: #182326;
+  --popover-foreground: #edf3f2;
+  --primary: #91c9ba;
+  --primary-foreground: #101819;
+  --secondary: #233236;
+  --secondary-foreground: #edf3f2;
+  --muted: #233236;
+  --muted-foreground: #a0b2b2;
+  --accent: #91c9ba;
+  --accent-foreground: #101819;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: rgb(242 237 224 / 0.12);
-  --input: rgb(242 237 224 / 0.15);
-  --ring: #c5baff;
+  --border: rgb(237 243 242 / 0.12);
+  --input: rgb(237 243 242 / 0.15);
+  --ring: #91c9ba;
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -282,7 +282,7 @@ html.route-transition::view-transition-new(root) {
   --chart-5: oklch(0.269 0 0);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary: #91c9ba;
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);

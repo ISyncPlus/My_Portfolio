@@ -31,7 +31,7 @@ export default function ContactForm() {
     }
   }
 
-  const field = "w-full rounded-2xl border border-white/20 bg-white/10 px-4 py-3.5 text-base text-white outline-none placeholder:text-white/45 focus:border-[#91cbd0] focus:ring-2 focus:ring-[#91cbd0]/30";
+  const field = "w-full rounded-2xl border border-white/20 bg-white/10 px-4 py-3.5 text-base text-white outline-none placeholder:text-white/45 focus:border-[#91c9ba] focus:ring-2 focus:ring-[#91c9ba]/30";
 
   return (
     <form onSubmit={submit} className="grid gap-5" aria-label="Send iSyncPlus a message">
@@ -58,7 +58,7 @@ export default function ContactForm() {
         <input name="website" tabIndex={-1} autoComplete="off" />
       </label>
       <div className="flex flex-wrap items-center justify-between gap-4">
-        <button type="submit" disabled={state === "sending"} className="inline-flex items-center gap-3 rounded-full bg-[#d8e1e7] px-6 py-3.5 font-bold text-[#221e35] transition-transform hover:scale-[1.03] disabled:cursor-wait disabled:opacity-60">
+        <button type="submit" disabled={state === "sending"} className="inline-flex items-center gap-3 rounded-full bg-[#91c9ba] px-6 py-3.5 font-bold text-[#101819] transition-transform hover:scale-[1.03] disabled:cursor-wait disabled:opacity-60">
           {state === "sending" ? "Sending..." : "Send message"}
           <ArrowUpRight className="size-5" aria-hidden="true" />
         </button>

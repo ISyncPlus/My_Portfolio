@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback } from "react";
 import { flushSync } from "react-dom";
 
 import { cn } from "@/lib/utils";
@@ -524,13 +524,8 @@ export const useThemeToggle = ({
   gifUrl?: string;
 } = {}) => {
   const { theme, setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    setIsDark(resolvedTheme === "dark");
-  }, [resolvedTheme]);
+  const mounted = resolvedTheme !== undefined;
+  const isDark = resolvedTheme === "dark";
 
   const styleId = "theme-transition-styles";
 
@@ -550,8 +545,6 @@ export const useThemeToggle = ({
 
   const toggleTheme = useCallback(() => {
     const nextTheme = (resolvedTheme || theme) === "dark" ? "light" : "dark";
-    setIsDark(nextTheme === "dark");
-
     const animation = createAnimation(variant, start, blur, gifUrl);
     updateStyles(animation.css);
 
@@ -591,7 +584,6 @@ export const useThemeToggle = ({
 
   return {
     isDark,
-    setIsDark,
     toggleTheme,
     mounted,
   };

@@ -66,7 +66,7 @@ export default function ParticleField({ word = "CODE" }: { word?: string }) {
     function draw() {
       if (!context) return;
       tick += 0.007;
-      context.fillStyle = "#100f19";
+      context.fillStyle = "#101819";
       context.fillRect(0, 0, width, height);
       const orbit = modeRef.current === "orbit";
       const sphereSize = Math.min(width * 0.33, height * 0.46);
@@ -114,7 +114,7 @@ export default function ParticleField({ word = "CODE" }: { word?: string }) {
   }
 
   return (
-    <div className="particle-field relative overflow-hidden rounded-[2rem] border border-white/15 bg-[#100f19]">
+    <div className="particle-field relative overflow-hidden rounded-[2rem] border border-white/15 bg-[#101819]">
       <button type="button" aria-label={`Interactive ${word} particle field. Hold to attract particles; activate to switch shape.`} onClick={() => setMode(current => current === "type" ? "orbit" : "type")} onPointerMove={updatePointer} onPointerDown={event => { updatePointer(event); pointer.current.down = true; }} onPointerUp={() => { pointer.current.down = false; }} onPointerLeave={() => { pointer.current.x = -1000; pointer.current.y = -1000; pointer.current.down = false; }} className="relative block h-[360px] w-full cursor-crosshair text-white sm:h-[540px]">
         <canvas ref={canvas} className="absolute inset-0 h-full w-full" aria-hidden="true" />
         {reduced && <span className="absolute inset-0 grid place-items-center font-heading text-[clamp(5rem,22vw,15rem)] font-black tracking-[-0.12em] text-[#cde9e8]">{word}</span>}

@@ -88,8 +88,8 @@ export default function OrbitalHero() {
         <p className="pointer-events-none absolute inset-x-0 top-[5%] z-30 text-center text-[0.65rem] font-bold uppercase tracking-[0.34em] text-accent sm:text-xs">Creative developer<span className="hidden sm:inline"> · UI engineer</span></p>
         <div className="orbit-stage pointer-events-none absolute inset-0" aria-hidden="true">
           <svg className="orbit-scribbles absolute inset-0 h-full w-full" viewBox="0 0 1200 630" fill="none" preserveAspectRatio="none">
-            <path d="M318 394C389 392 403 193 471 223C530 249 386 450 498 401" stroke="#328ad2" strokeWidth="5" strokeLinecap="round" />
-            <path d="M690 409C771 435 829 376 829 289C829 247 841 239 856 253" stroke="#db7656" strokeWidth="5" strokeLinecap="round" />
+            <path d="M318 394C389 392 403 193 471 223C530 249 386 450 498 401" stroke="var(--color-accent)" strokeWidth="5" strokeLinecap="round" />
+            <path d="M690 409C771 435 829 376 829 289C829 247 841 239 856 253" stroke="var(--color-muted-foreground)" strokeWidth="5" strokeLinecap="round" />
             <motion.path
               d="M310 430C510 416 689 430 877 417"
               stroke="var(--color-accent)"
@@ -98,8 +98,8 @@ export default function OrbitalHero() {
               style={{ pathLength: heroLineLength }}
             />
           </svg>
-          <span className="orbit-asterisk absolute left-[50%] top-[22%] text-5xl font-black text-[#7a66cf] sm:text-7xl">✳</span>
-          <span className="orbit-asterisk absolute left-[38%] top-[72%] text-3xl font-black text-[#7a66cf] sm:text-5xl">✳</span>
+          <span className="orbit-asterisk absolute left-[50%] top-[22%] text-5xl font-black text-accent sm:text-7xl">✳</span>
+          <span className="orbit-asterisk absolute left-[38%] top-[72%] text-3xl font-black text-accent sm:text-5xl">✳</span>
         </div>
 
         <div className="orbit-wordmark pointer-events-none absolute inset-x-0 top-[44%] z-30 -translate-y-1/2 text-center">

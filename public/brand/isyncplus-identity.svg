@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="960" viewBox="0 0 1536 960">
+  <defs>
+    <path id="upper" d="M23 2H44L58 16H25V30H15C12 30 10 29 8 27L6 25C3 22 3 18 6 15L17 4C19 2 21 2 23 2Z"/>
+    <path id="lower" d="M5 30L23 48H34V39H25V30H34V20H39L56 37C61 42 61 47 56 52L48 60C46 62 44 62 41 62H22C20 62 18 61 17 60L6 49C5 48 5 47 5 45V30Z"/>
+    <path id="plus" d="M60 3H64V5H66V9H64V11H60V9H58V5H60V3Z"/>
+  </defs>
+  <rect width="1536" height="960" fill="#d8e1e7"/>
+  <rect x="944" width="592" height="960" fill="#101819"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <path d="M72 104H872M72 604H872M72 886H872" stroke="#202d30" stroke-opacity=".18"/>
+    <text x="72" y="65" fill="#202d30" font-size="15" font-weight="700" letter-spacing="3">iSYNCPLUS</text>
+    <text x="872" y="65" fill="#4a5d62" font-size="13" letter-spacing="2.3" text-anchor="end">VISUAL IDENTITY / 01</text>
+    <text x="72" y="171" fill="#185e64" font-size="13" font-weight="700" letter-spacing="2.8">THE MARK</text>
+    <g transform="translate(79 253) scale(2.55)">
+      <use href="#upper" fill="#202d30"/>
+      <use href="#lower" fill="#185e64"/>
+      <use href="#plus" fill="#185e64"/>
+    </g>
+    <text x="276" y="361" fill="#202d30" font-size="91" font-weight="700" letter-spacing="-6">iSyncPlus</text>
+    <text x="72" y="493" fill="#202d30" font-size="34" font-weight="600" letter-spacing="-1">Design and engineering, in sync.</text>
+    <text x="72" y="531" fill="#4a5d62" font-size="19">Two interlocking forms. One small sign of what comes next.</text>
+    <text x="72" y="658" fill="#185e64" font-size="13" font-weight="700" letter-spacing="2.8">THE PALETTE</text>
+    <rect x="72" y="698" width="98" height="98" rx="10" fill="#202d30"/>
+    <rect x="194" y="698" width="98" height="98" rx="10" fill="#185e64"/>
+    <rect x="316" y="698" width="98" height="98" rx="10" fill="#91c9ba"/>
+    <rect x="438" y="698" width="98" height="98" rx="10" fill="#d8e1e7" stroke="#202d30" stroke-opacity=".24"/>
+    <g fill="#4a5d62" font-size="14">
+      <text x="72" y="827">Graphite</text>
+      <text x="194" y="827">Deep teal</text>
+      <text x="316" y="827">Sea glass</text>
+      <text x="438" y="827">Mist</text>
+    </g>
+    <text x="72" y="927" fill="#4a5d62" font-size="13" letter-spacing="2">ISYNCPLUS  /  2026</text>
+    <text x="872" y="927" fill="#4a5d62" font-size="13" letter-spacing="2" text-anchor="end">MARK · WORDMARK · COLOR</text>
+    <path d="M1008 104H1472M1008 758H1472M1008 886H1472" stroke="#edf3f2" stroke-opacity=".18"/>
+    <text x="1008" y="65" fill="#91c9ba" font-size="13" font-weight="700" letter-spacing="2.8">INVERSE APPLICATION</text>
+    <text x="1472" y="65" fill="#a0b2b2" font-size="13" letter-spacing="2.3" text-anchor="end">02</text>
+    <g transform="translate(1064 236) scale(5.4)">
+      <use href="#upper" fill="#edf3f2"/>
+      <use href="#lower" fill="#91c9ba"/>
+      <use href="#plus" fill="#91c9ba"/>
+    </g>
+    <text x="1008" y="704" fill="#edf3f2" font-size="47" font-weight="700" letter-spacing="-2">iSyncPlus</text>
+    <text x="1008" y="806" fill="#a0b2b2" font-size="18">A symbol for connection, clarity, and progress.</text>
+    <text x="1008" y="927" fill="#a0b2b2" font-size="13" letter-spacing="2">LIGHT / DARK</text>
+    <text x="1472" y="927" fill="#a0b2b2" font-size="13" letter-spacing="2" text-anchor="end">VECTOR MASTER</text>
+  </g>
+</svg>

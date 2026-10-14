@@ -47,10 +47,12 @@ The contact form sends messages to `eezedimbu@gmail.com` through [Resend](https:
 
 ```text
 RESEND_API_KEY=your_resend_api_key
-CONTACT_FROM_EMAIL=Ebube Portfolio <hello@your-verified-domain.com>
+CONTACT_FROM_EMAIL="iSyncPlus <hello@your-verified-domain.com>"
 ```
 
 Keep the API key private. If either variable is missing or sending fails, the form shows an error and offers a direct email link.
+
+Copy `.env.example` to `.env.local`, fill in both values, and restart `npm run dev`. In Vercel, add the same values under the project's Environment Variables for Preview and Production, then redeploy. `CONTACT_FROM_EMAIL` must be a verified sender; the visitor's email is used as Reply-To, and all messages go to `eezedimbu@gmail.com`.
 
 ## Development
 
