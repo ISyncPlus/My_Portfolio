@@ -602,7 +602,7 @@ export const ThemeToggleButton = ({
   blur?: boolean;
   gifUrl?: string;
 }) => {
-  const { isDark, toggleTheme, mounted } = useThemeToggle({
+  const { isDark, toggleTheme } = useThemeToggle({
     variant,
     start,
     blur,
@@ -617,13 +617,8 @@ export const ThemeToggleButton = ({
         className,
       )}
       onClick={toggleTheme}
-      aria-label={
-        mounted
-          ? isDark
-            ? "Switch to light theme"
-            : "Switch to dark theme"
-          : "Toggle theme"
-      }
+      aria-label="Toggle theme"
+      suppressHydrationWarning
     >
       <span className="sr-only">Toggle theme</span>
       <svg

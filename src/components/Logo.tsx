@@ -1,23 +1,32 @@
+import artwork from "@/lib/duet-logo.json";
+
 interface LogoProps extends React.SVGProps<SVGSVGElement> {
   size?: number | string;
   withBadge?: boolean;
   accentColor?: string;
+  primaryColor?: string;
+  withWordmark?: boolean;
   className?: string;
 }
 
-/** Interlocking forms with a small, independent plus at the upper edge. */
+/** Duet: the approved swallow repeated with an exact half-turn. */
 export const Logo = ({
   size = 32,
   withBadge = false,
   accentColor,
+  primaryColor,
+  withWordmark = false,
   className = "",
   ...props
 }: LogoProps) => {
+  const birdPrimary = primaryColor ?? "var(--brand-primary, #194F48)";
+  const birdSecondary = accentColor ?? "var(--brand-secondary, #C75A40)";
+
   return (
     <svg
-      width={size}
+      width={withWordmark ? (typeof size === "number" ? size * 800 / 172 : `calc(${size} * 800 / 172)`) : size}
       height={size}
-      viewBox="0 -2 68 68"
+      viewBox={withWordmark ? "0 42 800 172" : "0 0 256 256"}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
@@ -25,18 +34,21 @@ export const Logo = ({
       role="img"
       {...props}
     >
-      {withBadge && <rect y="-2" width="68" height="68" rx="18" fill="var(--card)" />}
-      <g>
+      {withBadge && !withWordmark && <rect width="256" height="256" rx="56" fill="var(--card)" />}
+      <g transform={withWordmark ? "translate(20 38) scale(.66)" : undefined}>
         <path
-          d="M23 2H44L58 16H25V30H15C12 30 10 29 8 27L6 25C3 22 3 18 6 15L17 4C19 2 21 2 23 2Z"
-          fill="currentColor"
+          d={artwork.bird}
+          fill={birdPrimary}
+          style={{ fill: birdPrimary }}
         />
         <path
-          d="M5 30L23 48H34V39H25V30H34V20H39L56 37C61 42 61 47 56 52L48 60C46 62 44 62 41 62H22C20 62 18 61 17 60L6 49C5 48 5 47 5 45V30Z"
-          fill={accentColor ?? "var(--accent)"}
+          d={artwork.bird}
+          transform="rotate(180 128 128)"
+          fill={birdSecondary}
+          style={{ fill: birdSecondary }}
         />
-        <path d="M60 3H64V5H66V9H64V11H60V9H58V5H60V3Z" fill={accentColor ?? "var(--accent)"} />
       </g>
+      {withWordmark && artwork.wordmark.map((d, index) => <path key={index} d={d} fill="currentColor" />)}
     </svg>
   );
 };

@@ -22,7 +22,7 @@ const siteUrl =
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     : process.env.VERCEL_URL
     ? `https://${process.env.VERCEL_URL}`
-    : "https://ebube-eze.vercel.app");
+    : "https://isyncplus.vercel.app");
 
 export const viewport: Viewport = {
   themeColor: [
@@ -72,20 +72,12 @@ export const metadata: Metadata = {
       "Creative developer and UI engineer based in Nigeria crafting thoughtful web interfaces, scalable interactive systems, and intuitive digital products.",
     images: [
       {
-        url: "/og-image.png",
-        secureUrl: `${siteUrl}/og-image.png`,
+        url: "/brand/isyncplus-duet-social.png",
+        secureUrl: `${siteUrl}/brand/isyncplus-duet-social.png`,
         width: 1200,
         height: 630,
         alt: "iSyncPlus — Creative Developer & UI Engineer Portfolio",
         type: "image/png",
-      },
-      {
-        url: "/og-image.jpg",
-        secureUrl: `${siteUrl}/og-image.jpg`,
-        width: 1200,
-        height: 630,
-        alt: "iSyncPlus — Creative Developer & UI Engineer Portfolio",
-        type: "image/jpeg",
       },
     ],
   },
@@ -97,7 +89,7 @@ export const metadata: Metadata = {
     creator: "@ISyncPlus",
     images: [
       {
-        url: "/og-image.png",
+        url: "/brand/isyncplus-duet-social.png",
         width: 1200,
         height: 630,
         alt: "iSyncPlus — Creative Developer & UI Engineer Portfolio",

@@ -1,8 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
-  <rect width="80" height="80" rx="18" fill="#101819"/>
-  <g transform="translate(8 10) scale(.9)">
-    <path d="M23 2H44L58 16H25V30H15C12 30 10 29 8 27L6 25C3 22 3 18 6 15L17 4C19 2 21 2 23 2Z" fill="#edf3f2"/>
-    <path d="M5 30L23 48H34V39H25V30H34V20H39L56 37C61 42 61 47 56 52L48 60C46 62 44 62 41 62H22C20 62 18 61 17 60L6 49C5 48 5 47 5 45V30Z" fill="#91c9ba"/>
-    <path d="M60 3H64V5H66V9H64V11H60V9H58V5H60V3Z" fill="#91c9ba"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="iSyncPlus / Duet"><title>iSyncPlus / Duet</title><rect width="256" height="256" rx="56" fill="#101819"/><g transform="translate(128 126) scale(.86) translate(-128 -128)"><g transform="translate(128 128) scale(1.05) translate(-128 -128)"><g transform=""><path fill="#91C9BA" d="M24 132C16 77 49 29 103 20C84 42 82 64 97 80C119.5 104 149 91 157 68C161 56.5 174 49 187 54L215 46.50L199 68C204 87 186 103 165 107C123 115 86 97 61 122L24 159L42.44 127.06Z"/></g><g transform="rotate(180 128 128)"><g transform=""><path fill="#E69C80" d="M24 132C16 77 49 29 103 20C84 42 82 64 97 80C119.5 104 149 91 157 68C161 56.5 174 49 187 54L215 46.50L199 68C204 87 186 103 165 107C123 115 86 97 61 122L24 159L42.44 127.06Z"/></g></g></g></g></svg>
