@@ -72,8 +72,8 @@ export const metadata: Metadata = {
       "Creative developer and UI engineer based in Nigeria crafting thoughtful web interfaces, scalable interactive systems, and intuitive digital products.",
     images: [
       {
-        url: "/brand/isyncplus-duet-social.png",
-        secureUrl: `${siteUrl}/brand/isyncplus-duet-social.png`,
+        url: "/brand/isyncplus-relay-social.png",
+        secureUrl: `${siteUrl}/brand/isyncplus-relay-social.png`,
         width: 1200,
         height: 630,
         alt: "iSyncPlus — Creative Developer & UI Engineer Portfolio",
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     creator: "@ISyncPlus",
     images: [
       {
-        url: "/brand/isyncplus-duet-social.png",
+        url: "/brand/isyncplus-relay-social.png",
         width: 1200,
         height: 630,
         alt: "iSyncPlus — Creative Developer & UI Engineer Portfolio",
@@ -109,12 +109,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/brand/isyncplus-relay-icon.svg", type: "image/svg+xml" },
     ],
     apple: [
-      { url: "/apple-icon", sizes: "180x180", type: "image/png" },
+      { url: "/brand/isyncplus-relay-apple.png", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: "/icon.svg",
+    shortcut: "/brand/isyncplus-relay-icon.svg",
   },
 };
 

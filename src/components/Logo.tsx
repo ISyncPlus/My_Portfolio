@@ -1,4 +1,4 @@
-import artwork from "@/lib/duet-logo.json";
+import artwork from "@/lib/relay-logo.json";
 
 interface LogoProps extends React.SVGProps<SVGSVGElement> {
   size?: number | string;
@@ -9,7 +9,7 @@ interface LogoProps extends React.SVGProps<SVGSVGElement> {
   className?: string;
 }
 
-/** Duet: the approved swallow repeated with an exact half-turn. */
+/** Relay: two matched routes around the central i and plus. */
 export const Logo = ({
   size = 32,
   withBadge = false,
@@ -19,8 +19,8 @@ export const Logo = ({
   className = "",
   ...props
 }: LogoProps) => {
-  const birdPrimary = primaryColor ?? "var(--brand-primary, #194F48)";
-  const birdSecondary = accentColor ?? "var(--brand-secondary, #C75A40)";
+  const primary = primaryColor ?? "var(--brand-primary, #194F48)";
+  const secondary = accentColor ?? "var(--brand-secondary, #C75A40)";
 
   return (
     <svg
@@ -37,16 +37,18 @@ export const Logo = ({
       {withBadge && !withWordmark && <rect width="256" height="256" rx="56" fill="var(--card)" />}
       <g transform={withWordmark ? "translate(20 38) scale(.66)" : undefined}>
         <path
-          d={artwork.bird}
-          fill={birdPrimary}
-          style={{ fill: birdPrimary }}
+          d={artwork.route}
+          fill={primary}
+          style={{ fill: primary }}
         />
         <path
-          d={artwork.bird}
+          d={artwork.route}
           transform="rotate(180 128 128)"
-          fill={birdSecondary}
-          style={{ fill: birdSecondary }}
+          fill={secondary}
+          style={{ fill: secondary }}
         />
+        <path d={artwork.plus} fill={secondary} style={{ fill: secondary }} />
+        <path d={artwork.stem} fill={primary} style={{ fill: primary }} />
       </g>
       {withWordmark && artwork.wordmark.map((d, index) => <path key={index} d={d} fill="currentColor" />)}
     </svg>

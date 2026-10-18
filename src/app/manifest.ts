@@ -12,17 +12,17 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#d8e1e7",
     icons: [
       {
-        src: "/icon.svg",
+        src: "/brand/isyncplus-relay-icon.svg",
         sizes: "any",
         type: "image/svg+xml",
       },
       {
-        src: "/brand/icon-192.png",
+        src: "/brand/isyncplus-relay-192.png",
         sizes: "192x192",
         type: "image/png",
       },
-      { src: "/brand/icon-512.png", sizes: "512x512", type: "image/png" },
-      { src: "/brand/maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
+      { src: "/brand/isyncplus-relay-512.png", sizes: "512x512", type: "image/png" },
+      { src: "/brand/isyncplus-relay-maskable.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
     ],
   };
 }
