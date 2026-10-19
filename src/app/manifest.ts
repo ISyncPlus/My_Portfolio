@@ -12,7 +12,7 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#d8e1e7",
     icons: [
       {
-        src: "/brand/isyncplus-mark.svg",
+        src: "/icon.svg",
         sizes: "any",
         type: "image/svg+xml",
       },
