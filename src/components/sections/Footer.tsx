@@ -17,7 +17,7 @@ export default function Footer() {
           <PortalLink href="/contact" className="flex size-20 items-center justify-center rounded-full border border-white/35 transition-all hover:rotate-45 hover:bg-[#91c9ba] hover:text-[#101819] sm:size-24" aria-label="Get in touch"><ArrowUpRight className="size-9" /></PortalLink>
         </div>
         <div className="grid gap-10 border-b border-white/15 py-10 sm:grid-cols-[1fr_auto_auto]">
-          <div><Logo size={32} withWordmark primaryColor="#91C9BA" accentColor="#E69C80" className="text-[#edf3f2]" /><p className="mt-3 text-sm text-white/55">Creative developer · Lagos, Nigeria</p></div>
+          <div><Logo size={32} withWordmark className="text-[#edf3f2]" /><p className="mt-3 text-sm text-white/55">Creative developer · Lagos, Nigeria</p></div>
           <nav aria-label="Footer navigation" className="grid grid-cols-2 gap-x-9 gap-y-2 text-sm font-semibold text-white/70">{links.map(([label, href]) => <PortalLink key={href} href={href} className="hover:text-white">{label}</PortalLink>)}</nav>
           <div className="space-y-2 text-sm font-semibold text-white/70"><a className="block hover:text-white" href="https://github.com/ISyncPlus" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a className="block hover:text-white" href="https://www.linkedin.com/in/ebube-ezedimbu/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a className="block hover:text-white" href="mailto:eezedimbu@gmail.com">Email ↗</a></div>
         </div>

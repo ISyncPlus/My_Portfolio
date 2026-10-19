@@ -1,5 +1,20 @@
 export const projects = [
   {
+    slug: "arise",
+    title: "ARISE",
+    category: "Immersive aviation experience",
+    description: "An immersive, editorial landing page for a fictional private aviation house.",
+    overview: "ARISE is a responsive product experience built around the feeling of private flight. It moves from a cinematic aircraft reveal into an interactive fleet, charter service, ownership options, and a direct enquiry flow.",
+    challenge: "Create a premium aviation experience with cinematic depth and rich interaction while keeping the interface responsive, accessible, and useful when enhanced media or 3D rendering is unavailable.",
+    approach: "A restrained editorial system combines scroll-controlled storytelling, hosted aircraft film, browser-rendered Three.js scenes, and focused product sections. Motion, sound, theme, keyboard, and reduced-motion controls keep the experience adaptable.",
+    highlights: ["Interactive five-aircraft fleet with 3D detail views", "Scroll-led hero, charter film, and ownership carousel", "Accessible controls, graceful 3D fallback, and validated enquiry flow"],
+    role: "Frontend concept · design and development",
+    tags: ["React 19", "TypeScript", "Three.js", "Tailwind CSS 4", "Vite 6"],
+    live: "https://arise-airs.vercel.app/",
+    source: "https://github.com/ISyncPlus/Arise",
+    preview: "/previews/arise.png",
+  },
+  {
     slug: "lodemark",
     title: "Lodemark",
     category: "Client website",

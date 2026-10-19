@@ -23,7 +23,7 @@ export default function Projects({ limit = projects.length }: { limit?: number }
               <div className="mt-4 flex flex-wrap gap-2">{project.tags.map(tag => <span key={tag} className="rounded-full border border-foreground/20 px-3 py-1 text-xs font-semibold text-foreground/65">{tag}</span>)}</div>
             </div>
             <div className="flex gap-3">
-              <a href={project.live} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} live site`} className="flex size-11 items-center justify-center rounded-full border border-foreground/25 text-foreground transition-colors hover:bg-foreground hover:text-background"><ArrowUpRight className="size-5" /></a>
+              {project.live && <a href={project.live} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} live site`} className="flex size-11 items-center justify-center rounded-full border border-foreground/25 text-foreground transition-colors hover:bg-foreground hover:text-background"><ArrowUpRight className="size-5" /></a>}
               {project.source && <a href={project.source} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} source code`} className="flex size-11 items-center justify-center rounded-full border border-foreground/25 text-foreground transition-colors hover:bg-foreground hover:text-background"><Code2 className="size-5" /></a>}
             </div>
           </div>

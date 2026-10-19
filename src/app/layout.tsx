@@ -109,12 +109,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/brand/isyncplus-relay-icon.svg", type: "image/svg+xml" },
+      { url: "/brand/isyncplus-mark.svg", type: "image/svg+xml" },
     ],
     apple: [
       { url: "/brand/isyncplus-relay-apple.png", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: "/brand/isyncplus-relay-icon.svg",
+    shortcut: "/brand/isyncplus-mark.svg",
   },
 };
 

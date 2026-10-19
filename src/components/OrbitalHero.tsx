@@ -8,12 +8,13 @@ import { projects } from "@/lib/projects";
 import { orbitPosition } from "@/lib/orbit";
 
 const positions = [
-  { x: "50%", y: "18%", w: "clamp(105px, 12vw, 170px)", z: "-90px", angle: "-11deg" },
-  { x: "84%", y: "34%", w: "clamp(105px, 11vw, 155px)", z: "-45px", angle: "7deg" },
-  { x: "84%", y: "65%", w: "clamp(110px, 12vw, 165px)", z: "45px", angle: "-8deg" },
-  { x: "50%", y: "80%", w: "clamp(105px, 12vw, 175px)", z: "90px", angle: "9deg" },
-  { x: "16%", y: "65%", w: "clamp(110px, 13vw, 185px)", z: "45px", angle: "-7deg" },
-  { x: "16%", y: "34%", w: "clamp(105px, 13vw, 180px)", z: "-45px", angle: "8deg" },
+  { x: "50%", y: "16%", w: "clamp(105px, 12vw, 170px)", z: "-90px", angle: "-10deg" },
+  { x: "80%", y: "30%", w: "clamp(105px, 11vw, 155px)", z: "-55px", angle: "7deg" },
+  { x: "87%", y: "59%", w: "clamp(110px, 12vw, 165px)", z: "20px", angle: "-8deg" },
+  { x: "68%", y: "80%", w: "clamp(105px, 12vw, 175px)", z: "90px", angle: "8deg" },
+  { x: "32%", y: "80%", w: "clamp(110px, 13vw, 185px)", z: "70px", angle: "-7deg" },
+  { x: "13%", y: "59%", w: "clamp(105px, 13vw, 180px)", z: "5px", angle: "8deg" },
+  { x: "20%", y: "30%", w: "clamp(105px, 12vw, 165px)", z: "-60px", angle: "-6deg" },
 ] as const;
 
 function moveScene(event: PointerEvent<HTMLDivElement>, scene: HTMLDivElement | null) {

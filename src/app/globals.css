@@ -147,12 +147,13 @@ html.route-transition::view-transition-new(root) {
 }
 
 @media (max-width: 639px) {
-  .orbit-item-1 { left: 50%; top: 15%; width: 105px; }
-  .orbit-item-2 { left: 79%; top: 32%; width: 100px; }
-  .orbit-item-3 { left: 79%; top: 66%; width: 105px; }
-  .orbit-item-4 { left: 50%; top: 83%; width: 105px; }
-  .orbit-item-5 { left: 21%; top: 66%; width: 108px; }
-  .orbit-item-6 { left: 21%; top: 32%; width: 105px; }
+  .orbit-item-1 { left: 50%; top: 14%; width: 102px; }
+  .orbit-item-2 { left: 78%; top: 28%; width: 98px; }
+  .orbit-item-3 { left: 82%; top: 57%; width: 102px; }
+  .orbit-item-4 { left: 66%; top: 82%; width: 102px; }
+  .orbit-item-5 { left: 34%; top: 82%; width: 104px; }
+  .orbit-item-6 { left: 18%; top: 57%; width: 102px; }
+  .orbit-item-7 { left: 22%; top: 28%; width: 100px; }
   .orbit-scribbles,
   .orbit-asterisk { display: none; }
 }
