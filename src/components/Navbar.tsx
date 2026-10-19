@@ -32,7 +32,8 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-3 z-50 px-4 md:top-5 md:px-6">
       <div className="mx-auto flex max-w-[1450px] items-center justify-between gap-x-4 rounded-full border border-foreground/10 bg-card/90 px-4 py-2.5 shadow-[0_16px_40px_rgb(25_28_44_/_0.1)] backdrop-blur-xl md:px-5 md:py-3">
         <PortalLink href="/" aria-label="iSyncPlus, home" className="flex shrink-0 items-center gap-2.5 font-heading text-base font-black tracking-tight text-foreground">
-          <Logo size={32} withWordmark className="text-foreground" aria-hidden="true" />
+          <span className="brand-mark-tile" aria-hidden="true"><Logo size={25} /></span>
+          <span>iSyncPlus</span>
         </PortalLink>
         <nav aria-label="Main navigation" className="hidden items-center gap-1 text-sm font-semibold text-foreground/80 md:flex">
           {links.map(([label, href]) => {

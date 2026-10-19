@@ -2,7 +2,6 @@ import artwork from "@/lib/relay-logo.json";
 
 interface LogoProps extends React.SVGProps<SVGSVGElement> {
   size?: number | string;
-  withBadge?: boolean;
   withWordmark?: boolean;
   className?: string;
 }
@@ -10,7 +9,6 @@ interface LogoProps extends React.SVGProps<SVGSVGElement> {
 /** Relay: two matched routes around the central i and plus. */
 export const Logo = ({
   size = 32,
-  withBadge = false,
   withWordmark = false,
   className = "",
   ...props
@@ -27,7 +25,6 @@ export const Logo = ({
       role="img"
       {...props}
     >
-      {withBadge && !withWordmark && <rect width="256" height="256" rx="56" fill="var(--card)" />}
       <g transform={withWordmark ? "translate(20 38) scale(.66)" : undefined}>
         <path
           d={artwork.route}
