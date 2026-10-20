@@ -89,21 +89,6 @@ export const projects = [
     source: "https://github.com/ISyncPlus/hydra-landing-page",
     preview: "/previews/hydra.jpg",
   },
-  {
-    slug: "planty",
-    title: "Planty",
-    category: "Storefront concept",
-    description: "A houseplant storefront concept with an airy, editorial shopping experience.",
-    overview: "Planty explores a softer direction for a plant shop. It puts the product imagery and browsing pathways first, using an open composition that works from desktop down to mobile.",
-    challenge: "Make a simple storefront feel calm and inviting while keeping product discovery easy to scan.",
-    approach: "Large plant imagery, restrained typography, generous white space, and a clear shop action establish the visual hierarchy.",
-    highlights: ["Image-led storefront hero", "Responsive browsing layout", "React and Vite frontend"],
-    role: "Frontend concept",
-    tags: ["React", "Vite", "Responsive UI"],
-    live: "https://planty-chi.vercel.app/",
-    source: "https://github.com/ISyncPlus/planty",
-    preview: "/previews/planty.jpg",
-  },
 ] as const;
 
 export type Project = (typeof projects)[number];

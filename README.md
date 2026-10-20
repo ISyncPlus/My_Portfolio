@@ -79,10 +79,10 @@ The goal is simple: make good work easy to understand. Every page is designed to
       <sub>React · TypeScript · Tailwind CSS · Vite</sub>
     </td>
     <td width="50%">
-      <a href="https://planty-chi.vercel.app/"><img src="./public/previews/planty.jpg" alt="Planty project preview"></a>
-      <h3><a href="https://planty-chi.vercel.app/">Planty ↗</a></h3>
-      <p><strong>Storefront concept</strong><br>An airy, editorial shopping experience for a modern houseplant shop.</p>
-      <sub>React · Vite · Responsive UI</sub>
+      <a href="https://arise-airs.vercel.app/"><img src="./public/previews/arise.png" alt="ARISE project preview"></a>
+      <h3><a href="https://arise-airs.vercel.app/">ARISE ↗</a></h3>
+      <p><strong>Immersive aviation experience</strong><br>An editorial landing page for a fictional private aviation house.</p>
+      <sub>React · TypeScript · Three.js · Tailwind CSS 4 · Vite 6</sub>
     </td>
   </tr>
 </table>
