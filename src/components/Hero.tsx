@@ -18,12 +18,12 @@ export default function Hero() {
           </div>
         </div>
         <div className="order-1 max-w-5xl md:order-2">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Lagos, Nigeria · Creative developer</p>
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Creative developer in Lagos, Nigeria</p>
           <h2 className="mt-5 font-heading text-[clamp(2.4rem,5vw,5.5rem)] font-black leading-[1.04] tracking-[-0.065em] text-foreground">
-            I build digital things <span className="text-accent">that feel human.</span>
+            Complex ideas, clear interfaces
           </h2>
           <div className="mt-7 flex flex-col gap-7 border-t border-foreground/20 pt-6 sm:flex-row sm:items-end sm:justify-between">
-            <p className="max-w-xl text-base leading-relaxed text-foreground/70 sm:text-lg">From considered interfaces to useful products, I turn complex ideas into experiences people enjoy using.</p>
+            <p className="max-w-xl text-base leading-relaxed text-foreground/70 sm:text-lg">I design and build web and mobile products, from the interface on screen to the APIs and data flows underneath.</p>
             <PortalLink href="/work" className="group inline-flex w-fit shrink-0 items-center gap-3 rounded-full border border-foreground/30 px-5 py-3 text-sm font-bold text-foreground transition-colors hover:border-accent hover:bg-accent hover:text-accent-foreground">Explore my work <ArrowDownRight className="size-4 transition-transform group-hover:translate-y-0.5" aria-hidden="true" /></PortalLink>
           </div>
           <div className="mt-9 flex flex-wrap gap-x-7 gap-y-3 text-xs font-bold uppercase tracking-[0.14em] text-foreground/60">

@@ -34,6 +34,8 @@ html { scroll-behavior: smooth; }
 .brand-mark-tile { display: inline-flex; width: 32px; height: 32px; aspect-ratio: 1 / 1; flex: none; align-items: center; justify-content: center; overflow: hidden; border-radius: 50%; }
 .dark .brand-mark-tile,
 .brand-mark-tile--inverse { background: #edf3f2; }
+.brand-wordmark { font-family: var(--font-brand), sans-serif; font-size: 1.05rem; font-weight: 400; letter-spacing: .01em; white-space: nowrap; }
+.brand-wordmark-plus { display: inline-block; margin-left: .04em; font-size: .68em; line-height: 0; vertical-align: super; }
 
 @media (max-width: 767px) {
   html { scroll-padding-bottom: 7rem; }

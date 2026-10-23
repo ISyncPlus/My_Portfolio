@@ -125,7 +125,7 @@ export default function OrbitalHero() {
         })}
       </div>
       <div className="relative z-10 mx-auto flex max-w-[1350px] flex-wrap items-end justify-between gap-4 pb-8 text-[10px] font-bold uppercase tracking-[0.12em] text-foreground/65 sm:text-sm sm:tracking-[0.16em]">
-        <p>Design minded. Engineering driven.</p>
+        <p>Web, mobile &amp; product systems</p>
       </div>
     </div>
   );

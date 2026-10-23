@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Montserrat } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 import { Providers } from "@/components/providers";
@@ -14,6 +15,12 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["600", "700", "800", "900"],
   variable: "--font-display",
+});
+
+const suiGeneris = localFont({
+  src: "./fonts/SuiGeneris-Regular.otf",
+  variable: "--font-brand",
+  display: "swap",
 });
 
 const siteUrl =
@@ -126,7 +133,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(inter.variable, montserrat.variable, "font-sans")}
+      className={cn(inter.variable, montserrat.variable, suiGeneris.variable, "font-sans")}
       suppressHydrationWarning
     >
       <body>
