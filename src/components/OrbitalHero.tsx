@@ -108,7 +108,7 @@ export default function OrbitalHero() {
           <p className="mt-4 text-xs font-medium text-foreground/65 sm:text-sm">Web, mobile &amp; everything in between</p>
         </div>
 
-        {projects.map((project, index) => {
+        {projects.slice(0, positions.length).map((project, index) => {
           const position = positions[index];
           const style = {
             "--x": position.x, "--y": position.y, "--w": position.w,
